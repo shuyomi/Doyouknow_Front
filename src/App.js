@@ -13,15 +13,15 @@ import Schedule from './pages/Schedule';
 function App() {
   return (
     <BrowserRouter>
-        <Routes>"
-          <Route path="/" elemet={<Home/>}/>
-          <Route path="/lost" elemet={<Lost/>}/>
-          <Route path="/notice" elemet={<Notice/>}/>
-          <Route path="/faq" elemet={<Faq/>}/>
-          <Route path="/campusInfo" elemet={<CampusInfo/>}/>
-          <Route path="/contactInfo" elemet={<ContactInfo/>}/>
-          <Route path="/news" elemet={<News/>}/>
-          <Route path="/schedule" elemet={<Schedule/>}/>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/lost" element={<Lost/>}/>
+          <Route path="/notice" element={<Notice/>}/>
+          <Route path="/faq" element={<Faq/>}/>
+          <Route path="/campusInfo" element={<CampusInfo/>}/>
+          <Route path="/contactInfo" element={<ContactInfo/>}/>
+          <Route path="/news" element={<News/>}/>
+          <Route path="/schedule" element={<Schedule/>}/>
         </Routes>
       </BrowserRouter>
   );
