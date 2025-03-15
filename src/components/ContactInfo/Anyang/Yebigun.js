@@ -19,15 +19,14 @@ const Yebigun = () => {
                             <td>예비군대대</td>
                             <td>(봉402)</td>
                             <td>
-                                <a href="tel:0314630703">031-463-0703</a>
+                                <a href="tel:0314631368">463-1368</a>
+                                <br />
+                                <a href="tel:0314670772">467-0772</a>
                             </td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td></td>
-                            <td>
-                                <a href="tel:0314630703">031-463-0703</a>
-                            </td>
+                            <td colSpan="2">Fax: 463-1369</td>
                         </tr>
                     </tbody>
                 </table>
