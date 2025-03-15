@@ -1,0 +1,40 @@
+.title01::before {
+    display: block;
+    content: "";
+    width: 3.2rem;
+    height: 0.3rem;
+    background: url(https://www.anyang.ac.kr/_res/anyang/enter/img/ico-dot-tit.png) no-repeat;
+    background-size: contain;
+    padding-bottom: 0.2rem;
+}
+
+h3 {
+    color: #348fdb;
+}
+
+/* 테이블 기본 스타일 */
+.table-container {
+    overflow-x: auto; /* 모바일에서 가로 스크롤이 생기도록 함 */
+    margin: 20px 0;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.table th {
+    background-color: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+}
