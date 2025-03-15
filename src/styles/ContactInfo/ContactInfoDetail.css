@@ -1,14 +1,19 @@
 .title01::before {
     display: block;
     content: "";
-    width: 3.2rem;
+    width: 2.5rem;
     height: 0.3rem;
     background: url(https://www.anyang.ac.kr/_res/anyang/enter/img/ico-dot-tit.png) no-repeat;
     background-size: contain;
     padding-bottom: 0.2rem;
 }
 
+h2 {
+    font-size: 30px;
+}
+
 h3 {
+    font-size: 20px;
     color: #348fdb;
 }
 
@@ -33,6 +38,11 @@ h3 {
 
 .table th {
     background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+thead tr {
+    border-top: 2px solid black;
 }
 
 a {
