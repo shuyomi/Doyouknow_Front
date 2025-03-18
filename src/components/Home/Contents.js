@@ -1,19 +1,15 @@
 import React from "react";
-import './Styles/Contents.css';
-import Searchbar from "./Searchbar"; 
-import Menu from "./Menu"; 
-
+import Searchbar from "./Searchbar";
+import Menu from "./Menu";
+import "../../styles/Home/Contents.css";
 
 const Contents = () => {
-    return(
+    return (
         <div className="contents">
-     
-          <Searchbar />
-          <Menu/>
-
-
+            <Searchbar />
+            <Menu />
         </div>
-    )
+    );
 };
 
 export default Contents;

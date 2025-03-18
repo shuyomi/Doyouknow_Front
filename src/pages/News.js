@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const News = () => {
-    return(
-        <div>
-        <h1>학교소식</h1>
-       </div>
-    )
-}
+    return <></>;
+};
 
 export default News;

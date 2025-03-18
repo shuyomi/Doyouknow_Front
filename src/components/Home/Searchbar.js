@@ -1,12 +1,12 @@
 import React from "react";
-import './Styles/Searchbar.css';
+import "../../styles/Home/Searchbar.css";
 
 const Searchbar = () => {
-    return(
+    return (
         <div className="searchbar">
-      <img src="/images/Searchicon.png" alt="검색 아이콘" />
-      </div>
-    )
+            <img src="/images/Searchicon.png" alt="검색 아이콘" />
+        </div>
+    );
 };
 
 export default Searchbar;
