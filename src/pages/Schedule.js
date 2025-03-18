@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
+import ScheduleHeader from "../components/Schedule/ScheduleHeader";
+import ScheduleCalendar from "../components/Schedule/ScheduleCalendar";
+import ScheduleList from "../components/Schedule/ScheduleList";
 
 const Schedule = () => {
-    return(
+    return (
         <div>
-        <h1>학사일정</h1>
-       </div>
-    )
-}
+            <ScheduleHeader />
+            <ScheduleCalendar />
+            <ScheduleList />
+        </div>
+    );
+};
 
 export default Schedule;
