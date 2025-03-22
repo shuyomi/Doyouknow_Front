@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Link 임포트
+import { Link } from "react-router-dom";
 import "../../styles/Notice/NoticeItem.css";
 
+// 제목 일정 길이 이상일 때 ... 처리
 const truncateText = (text, maxLength) => {
     return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
 };
@@ -12,14 +13,14 @@ const NoticeItem = ({ notice }) => {
             <div className="noticeitem-container">
                 <div className="notice-header">
                     <span className="category-title">
-                        <span className="category">[{notice.category}]</span>{" "}
-                        {truncateText(notice.title, 17)}
+                        <span className="category">[{notice.noticeCategory}]</span>{" "}
+                        {truncateText(notice.noticeTitle, 17)}
                     </span>
                 </div>
                 <div className="notice-footer">
-                    <span className="date">{notice.date}</span>
+                    <span className="date">{notice.noticeDate}</span>
                     <span className="divider">|</span>
-                    <span className="author">{notice.author}</span>
+                    <span className="author">{notice.noticeDormitory}</span>
                 </div>
             </div>
         </Link>

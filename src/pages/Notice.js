@@ -1,55 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NoticeHeader from "../components/Notice/NoticeHeader";
 import NoticeCategory from "../components/Notice/NoticeCategory";
 import NoticeList from "../components/Notice/NoticeList";
+import axios from "axios";
 
 const Notice = () => {
     const [selectedCategory, setSelectedCategory] = useState("전체");
+    const [notices, setNotices] = useState([]);
 
-    const notices = [
-        {
-            id: 1,
-            title: "2025학년도 신입생 모집",
-            date: "2025.03.01",
-            category: "대학교",
-            author: "대학원교학과",
-        },
-        {
-            id: 2,
-            title: "2025학년도 신입생 모집",
-            date: "2025.03.01",
-            category: "학사",
-            author: "대학원교학과",
-        },
-        {
-            id: 3,
-            title: "2025학년도 신입생 모집",
-            date: "2025.03.01",
-            category: "학사",
-            author: "대학원교학과",
-        },
-        {
-            id: 4,
-            title: "2025학년도 신입생 모집",
-            date: "2025.03.01",
-            category: "취업",
-            author: "대학원교학과",
-        },
-        {
-            id: 5,
-            title: "2025학년도 신입생 모집",
-            date: "2025.03.01",
-            category: "대학원",
-            author: "대학원교학과",
-        },
-        {
-            id: 6,
-            title: "2025학년도 신입생 모집 언제까지할까나 내년까지할까나",
-            date: "2025.03.01",
-            category: "입찰채용",
-            author: "대학원교학과",
-        },
-    ];
+    useEffect(() => {
+        axios
+            .get("http://localhost:8080/notice/all")
+            .then((res) => {
+                console.log("API 응답:", res.data);
+                setNotices(res.data);
+            })
+            .catch((err) => console.error("API 호출 오류:", err));
+    }, []);
 
     const categories = ["전체", "대학교", "학사", "대학원", "취업", "입찰채용"];
 
@@ -66,9 +33,9 @@ const Notice = () => {
         <div>
             <NoticeHeader />
             <NoticeCategory
-                categories={categories} //카테고리 리스트 전달
-                onSelectCategory={handleSelectCategory} //카테고리 선택
-                selectedCategory={selectedCategory} // 선택한 카테고리
+                categories={categories}
+                onSelectCategory={handleSelectCategory}
+                selectedCategory={selectedCategory}
             />
             <NoticeList notices={filteredNotices} />
         </div>
