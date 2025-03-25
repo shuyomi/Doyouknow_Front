@@ -7,6 +7,7 @@ import Faq from './pages/Faq';
 import CampusInfo from './pages/CampusInfo';
 import ContactInfo from './pages/ContactInfo';
 import News from './pages/News';
+import NewsDetail from "./pages/NewsDetail";
 import Schedule from './pages/Schedule';
 import './App.css';
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/campusInfo" element={<CampusInfo/>}/>
           <Route path="/contactInfo" element={<ContactInfo/>}/>
           <Route path="/news" element={<News/>}/>
+          <Route path="/news/:id" element={<NewsDetail />} />
           <Route path="/schedule" element={<Schedule/>}/>
         </Routes>
       </BrowserRouter>
