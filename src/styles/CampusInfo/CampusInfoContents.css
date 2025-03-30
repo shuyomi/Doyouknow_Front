@@ -1,0 +1,48 @@
+.CampusInfo-contents{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+  
+    
+}
+
+.Nav {
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    border-top: 2px solid #8d8d8d;
+    border-bottom: 2px solid #8d8d8d;
+
+  }
+
+
+  .CampusBody {
+    height: 90%;
+    background-color: #DFEDD6;
+    max-height: 80vh;
+    overflow-y: scroll;
+  }
+
+  /* 스크롤 스타일 필요시 수정정
+  .anyang-page::-webkit-scrollbar {
+    width: 10px; 
+  }
+  
+  .anyang-page::-webkit-scrollbar-track {
+    background: #f9f9f9; 
+    border:1px solid #bababa;
+
+  }
+  
+  .anyang-page::-webkit-scrollbar-thumb {
+    background: #c7d8f2b1; 
+    border-radius: 10px; 
+  
+  }
+  
+  .anyang-page::-webkit-scrollbar-thumb:hover {
+    background: #77acfc; 
+  }*/
+
+  
