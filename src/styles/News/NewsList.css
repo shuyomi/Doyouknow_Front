@@ -1,0 +1,33 @@
+.news-list {
+    width: 85%;
+    margin: 10px auto;
+    text-align: center;
+    overflow-y: auto;
+    max-height: 90vh;
+    
+}
+
+.news-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    table-layout: auto;
+}
+
+.news-table th, .news-table td {
+    border: 1px solid #535556;
+    padding: 8px;
+    font-size: 12px;
+    min-width: 40px;
+}
+
+.news-table th {
+    background-color: #e1eefa;
+    text-align: center;
+    font-weight: bold;
+}
+
+.news-table tr:hover {
+    background-color: #e1eefa;
+    cursor: pointer;
+}

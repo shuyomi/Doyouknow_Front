@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Home from "./pages/Home";
 import Lost from "./pages/Lost";
 import Notice from "./pages/Notice";
@@ -24,6 +25,7 @@ function App() {
                     <Route path="/campusInfo" element={<CampusInfo />} />
                     <Route path="/contactInfo" element={<ContactInfo />} />
                     <Route path="/news" element={<News />} />
+                    <Route path="/news/:id" element={<NewsDetail />} />
                     <Route path="/schedule" element={<Schedule />} />
                 </Routes>
             </BrowserRouter>
