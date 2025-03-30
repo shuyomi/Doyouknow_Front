@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import Home from "./pages/Home";
 import Lost from "./pages/Lost";
 import Notice from "./pages/Notice";
@@ -9,6 +8,7 @@ import Faq from "./pages/Faq";
 import CampusInfo from "./pages/CampusInfo";
 import ContactInfo from "./pages/ContactInfo";
 import News from "./pages/News";
+import NewsDetail from "./pages/NewsDetail";
 import Schedule from "./pages/Schedule";
 import "./App.css";
 
