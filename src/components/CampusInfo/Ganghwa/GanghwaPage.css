@@ -1,0 +1,32 @@
+.ganghwa-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    margin: auto;
+    padding: 30px;
+  }
+  
+  .coming-soon-container {
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .coming-soon-text {
+    font-size: 30px;
+    font-weight: bold;
+    color: #f56c6c; /* 강조할 색상 */
+    margin-bottom: 10px;
+  }
+  
+  .coming-soon-subtext {
+    font-size: 18px;
+    color: #6c757d; /* 부드러운 텍스트 색상 */
+  }
+  
+  .coming-soon-container p {
+    margin: 0; /* p 태그 간의 기본 여백을 없애기 */
+  }
