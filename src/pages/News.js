@@ -7,7 +7,7 @@ import NewsList from "../components/News/NewsList";
 
 const News = () => {
 
-    /*const [selectedCategory, setSelectedCategory] = useState("전체");*/
+    
     const navigate = useNavigate();
 
     const news = [
@@ -80,15 +80,15 @@ const News = () => {
     };
 
 
-    /*const [selectedCategory, setSelectedCategory] = useState("전체");
-    const [news, setNotices] = useState([]);
+    /*const [news, setNews] = useState("전체");
+    const [news, setNews] = useState([]);
 
     useEffect(() => {
         axios
             .get("http://localhost:8080/news/all")
             .then((res) => {
                 console.log("API 응답:", res.data);
-                setNotices(res.data);
+                setNews(res.data);
             })
             .catch((err) => console.error("API 호출 오류:", err));
     }, []);*/
@@ -97,18 +97,7 @@ const News = () => {
     return (
       <div className="News-contents">
       <Header />
-      {/* //학교소식은 카테고리가 나눠지지는 않는다다
-        <NewsCategory 
-        categories={categories} //카테고리 리스트 전달
-        onSelectCategory={handleSelectCategory} //카테고리 선택
-        selectedCategory={selectedCategory} // 선택한 카테고리
-        categories={categories} 
-        onSelectCategory={handleSelectCategory}
-        selectedCategory={selectedCategory}
-      />*/}
-             <NewsList news={news} onNewsClick={handleNewsClick} /> 
-      
-      
+      <NewsList news={news} onNewsClick={handleNewsClick} /> 
 
       </div>
     );
