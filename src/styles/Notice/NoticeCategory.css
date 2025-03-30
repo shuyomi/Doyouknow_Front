@@ -1,0 +1,21 @@
+.notice-category-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.notice-category-btn {
+    color: rgb(0, 0, 0);
+    padding: 8px 10px;
+    border: 0px solid #fff;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.notice-category-btn.selected {
+    color: blue;
+}
