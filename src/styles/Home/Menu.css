@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
     row-gap: 15px; 
-    padding: 35px;
+    padding: 45px;
     height: 60%;
     width: 100%;
     justify-content: center;
@@ -13,7 +13,7 @@
   }
   
   .square-btn {
-    width: 60%; /* 고정된 가로 크기 */
+    width: 55%; /* 고정된 가로 크기 */
     height: 95%; /* 고정된 세로 크기 */
     background-color: #E9F2FF;
     border: none;
