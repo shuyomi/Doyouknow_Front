@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Faq/Footer.css";
+import "../../styles/Home/Footer.css";
 
 const Footer = () => {
     return (
@@ -10,10 +10,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="footer-item"
         >
-           <i
-        className="pi pi-external-link footer-icon"
-        style={{ margin: 'auto', paddingBottom:'5px'}}
-        ></i>
+            <img src="/images/portal.png" alt="학교 포털" className="footer-img" />
             <span>학교 포털</span>
         </a>
 
@@ -23,10 +20,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="footer-item"
         >
-        <i
-        className="pi pi-globe footer-icon"
-        style={{  margin: 'auto', paddingBottom:'5px' }}
-        ></i>
+            <img src="/images/official.png" alt="공식 사이트" className="footer-img" />
             <span>공식 사이트</span>
         </a>
 
@@ -36,10 +30,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="footer-item"
         >
-             <i
-        className="pi pi-comments footer-icon"
-        style={{ margin: 'auto', paddingBottom:'5px' }}
-        ></i>
+            <img src="/images/inquiry.png" alt="문의하기" className="footer-img" />
             <span>문의하기</span>
         </a>
     </div>

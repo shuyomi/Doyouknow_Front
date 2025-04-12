@@ -1,14 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../../styles/Notice/NoticeHeader.css";
 
 const NoticeHeader = () => {
-    return (
-        <header className="notice-header">
-            <Link to="/"></Link>
-            <h1>공지사항</h1>
-            <div></div>
-        </header>
+    const navigate = useNavigate();
+    
+      return (
+        <div className='header'>
+             <button className="header-button" onClick={() => navigate(-1)}>
+             <i className="pi pi-arrow-left" style={{ fontSize: '1.5rem', color: 'dodgerblue' }}></i>
+    
+             </button>
+    
+             <h1 className="header-title">공지사항</h1>
+             <button className="header-button" onClick={() => navigate('/')}>
+         <i className="pi pi-home" style={{ fontSize: '1.7rem', color: 'dodgerblue' }}></i>
+
+        </button>
+        </div>
     );
 };
 

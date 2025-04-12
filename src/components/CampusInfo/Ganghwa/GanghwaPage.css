@@ -9,17 +9,20 @@
   
   .coming-soon-container {
     text-align: center;
-    padding: 30px;
+    padding-top: 170px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 60vh;
+    width: 80%;
   }
   
   .coming-soon-text {
     font-size: 30px;
     font-weight: bold;
     color: #f56c6c; /* 강조할 색상 */
-    margin-bottom: 10px;
+    margin-top: 60px;
+
   }
   
   .coming-soon-subtext {

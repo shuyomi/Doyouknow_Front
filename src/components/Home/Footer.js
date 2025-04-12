@@ -10,30 +10,38 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="footer-item"
         >
-            <img src="/images/portal.png" alt="학교 포털" className="footer-img" />
+            <i
+        className="pi pi-external-link footer-icon"
+        style={{ margin: 'auto', paddingBottom:'5px'}}
+        ></i>
             <span>학교 포털</span>
         </a>
-
         <a
             href="https://www.anyang.ac.kr/main/index.do"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-item"
         >
-            <img src="/images/official.png" alt="공식 사이트" className="footer-img" />
+             <i
+        className="pi pi-globe footer-icon"
+        style={{  margin: 'auto', paddingBottom:'5px' }}
+        ></i>
             <span>공식 사이트</span>
         </a>
 
         <a
-            href="https://naver.me/yourformlink"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-item"
+         href="https://naver.me/yourformlink"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="footer-item"
         >
-            <img src="/images/inquiry.png" alt="문의하기" className="footer-img" />
-            <span>문의하기</span>
+        <i
+        className="pi pi-comments footer-icon"
+        style={{ margin: 'auto', paddingBottom:'5px' }}
+        ></i>
+        <span>문의하기</span>
         </a>
-    </div>
+        </div>
 
     );
 };

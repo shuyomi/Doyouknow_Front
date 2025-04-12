@@ -3,6 +3,7 @@ import ContactInfoCategory from "../components/ContactInfo/ContactInfoCategory";
 import ContactInfoHeader from "../components/ContactInfo/ContactInfoHeader";
 import ContactInfoList from "../components/ContactInfo/ContactInfoList";
 
+
 const ContactInfo = () => {
     const [selectedCategory, setSelectedCategory] = useState("안양캠퍼스");
     
@@ -21,6 +22,7 @@ const ContactInfo = () => {
                 selectedCategory={selectedCategory}
             />
             <ContactInfoList category={selectedCategory} />
+
         </div>
     );
 };

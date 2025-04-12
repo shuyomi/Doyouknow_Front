@@ -3,6 +3,7 @@ import ScheduleHeader from "../components/Schedule/ScheduleHeader";
 import ScheduleCalendar from "../components/Schedule/ScheduleCalendar";
 import ScheduleList from "../components/Schedule/ScheduleList";
 
+
 const Schedule = () => {
     return (
         <div>

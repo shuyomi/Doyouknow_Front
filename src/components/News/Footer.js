@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Faq/Footer.css";
+import "../../styles/Home/Footer.css";
 
 const Footer = () => {
     return (
@@ -23,7 +23,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="footer-item"
         >
-        <i
+             <i
         className="pi pi-globe footer-icon"
         style={{  margin: 'auto', paddingBottom:'5px' }}
         ></i>
@@ -36,7 +36,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="footer-item"
         >
-             <i
+           <i
         className="pi pi-comments footer-icon"
         style={{ margin: 'auto', paddingBottom:'5px' }}
         ></i>

@@ -3,11 +3,13 @@ import { useNavigate } from "react-router-dom";
 import '../styles/News/News.css';
 import Header from "../components/News/NewsHeader";
 import NewsList from "../components/News/NewsList";
+import Footer from "../components/News/Footer";
+
 //import axios from "axios";
 
 const News = () => {
 
-    /*const [selectedCategory, setSelectedCategory] = useState("전체");*/
+
     const navigate = useNavigate();
 
     const news = [
@@ -71,6 +73,56 @@ const News = () => {
             date: "2025.03.17",
             author: "홍보실",
         },
+        {
+            id: 11,
+            title: "우리 대학과 SBS아카데미게임학원 업무협약식",
+            date: "2025.02.18",
+            author: "홍보실",
+        },
+        {
+            id: 12,
+            title: "우리 대학과 SBS아카데미게임학원 업무협약식",
+            date: "2025.02.17",
+            author: "홍보실",
+        },
+        {
+            id: 13,
+            title: "우리 대학과 SBS아카데미게임학원 업무협약식",
+            date: "2025.02.10",
+            author: "홍보실",
+        },
+        {
+            id: 14,
+            title: "우리 대학과 SBS아카데미게임학원 업무협약식",
+            date: "2025.02.05",
+            author: "홍보실",
+        },
+        {
+            id: 15,
+            title: "우리 대학과 SBS아카데미게임학원 업무협약식",
+            date: "2025.01.29",
+            author: "홍보실",
+        },
+        {
+            id: 16,
+            title: "우리 대학과 SBS아카데미게임학원 업무협약식",
+            date: "2025.01.20",
+            author: "홍보실",
+        },
+        {
+            id: 17,
+            title: "우리 대학과 SBS아카데미게임학원 업무협약식",
+            date: "2025.01.17",
+            author: "홍보실",
+        },
+        {
+            id: 18,
+            title: "우리 대학과 SBS아카데미게임학원 업무협약식",
+            date: "2025.01.17",
+            author: "홍보실",
+        },
+
+
 
 
     ];
@@ -80,15 +132,15 @@ const News = () => {
     };
 
 
-    /*const [selectedCategory, setSelectedCategory] = useState("전체");
-    const [news, setNotices] = useState([]);
+    /*const [news, setNews] = useState("전체");
+    const [news, setNews] = useState([]);
 
     useEffect(() => {
         axios
             .get("http://localhost:8080/news/all")
             .then((res) => {
                 console.log("API 응답:", res.data);
-                setNotices(res.data);
+                setNews(res.data);
             })
             .catch((err) => console.error("API 호출 오류:", err));
     }, []);*/
@@ -96,17 +148,9 @@ const News = () => {
 
     return (
       <div className="News-contents">
-      <Header />
-      {/* //학교소식은 카테고리가 나눠지지는 않는다다
-        <NewsCategory 
-        categories={categories} //카테고리 리스트 전달
-        onSelectCategory={handleSelectCategory} //카테고리 선택
-        selectedCategory={selectedCategory} // 선택한 카테고리
-        categories={categories} 
-        onSelectCategory={handleSelectCategory}
-        selectedCategory={selectedCategory}
-      />*/}
-             <NewsList news={news} onNewsClick={handleNewsClick} /> 
+        <Header />
+        <NewsList news={news} onNewsClick={handleNewsClick} />
+        <Footer /> 
       
       
 
