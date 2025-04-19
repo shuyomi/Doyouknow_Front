@@ -28,11 +28,7 @@
     font-weight: bold;
     font-family: 'Noto Sans KR', sans-serif;
   }
- 40 changes: 40 additions & 0 deletions40  
-src/styles/CampusInfo/CampusInfoNavigation.css
-Viewed
-Original file line number	Diff line number	Diff line change
-@@ -0,0 +1,40 @@
+
 
 .button {
   display: flex;

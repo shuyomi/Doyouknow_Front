@@ -19,32 +19,48 @@ const NewsList = ({ news, onNewsClick }) => {
     
     return (
         <div className="news-box">
-
-            <div className="news-list">
-                <table className="news-table">
-                    <thead>
-                        <tr>
-                            <th>번호</th>
-                            <th>제목</th>
-                            <th>작성자</th>
-                            <th>작성일</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {currentNews.map((item, index) => (
-                            <NewsItem key={item.id} item={item} index={first + index} onNewsClick={onNewsClick} />
-                        ))}
-                    </tbody>
-                </table>
+    <div className="news-list">
+        {currentNews.map((item, index) => (
+            <div
+                key={item.id}
+                className="newsitem-container"
+                onClick={() => onNewsClick(item.id)}
+            >
+                <div className="news-header">
+                    <span className="news-title">{item.title}</span>
+                </div>
+                <div className="news-footer">
+                    <span className="news-author">{item.author}</span>
+                    <span className="divider">|</span>
+                    <span className="news-date">{item.date}</span>
+                    <span className="divider">|</span>
+                    <span className="news-number">No. {first + index + 1}</span>
+                </div>
             </div>
+        ))}
+    </div>
 
-            <Paginator
-                first={first}
-                rows={rows}
-                totalRecords={news.length}
-                onPageChange={onPageChange}
-            />
-        </div>
+    <div style={{ margin: '0 -10px' }}>
+    <Paginator
+    first={first}
+    rows={rows}
+    totalRecords={news.length}
+    onPageChange={onPageChange}
+    pt={{
+        pageButton: {
+            className: 'custom-page-btn'
+        },
+        nextPageButton: {
+            className: 'custom-btn'
+        },
+        prevPageButton: {
+            className: 'custom-btn'
+        }
+    }}
+/>
+</div>
+</div>
+
     );
 };
 

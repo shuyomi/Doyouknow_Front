@@ -1,46 +1,67 @@
-.news-box{
+.news-box {
     width: 100%;
-    height: 85vh;
-    overflow-y: auto;
 
 }
 
 .news-list {
     width: 85%;
     margin: 15px auto;
-    text-align: center;
-  
-    /*border: 3px solid #69add0;*/
-
+    display: flex;
+    overflow-y: auto;
+    height: 70vh;
+    flex-direction: column;
+    gap: 12px;
     
 }
 
-.news-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-    table-layout: auto;
-
- 
-}
-.news-table tr {
-    border: none;
-}
-.news-table th, .news-table td {
-    border-bottom: 1px solid #a7a2a253; 
-    padding: 8px;
-    font-size: 12px;
-    min-width: 50px;
-}
-
-.news-table th {
-    background-color: #d1e4f8e7;
-    text-align: center;
-    font-weight: bold;
-    border-top: 1px solid #d3d3d3;
-}
-
-.news-table tr:hover {
-    background-color: #ebf1f7d8;
+/* 카드 스타일 */
+.newsitem-container {
+    border: 1px solid #b8b6b6;
+    border-radius: 20px;
+    padding: 10px 15px 12px 20px;
+    margin: 0 5px;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
+
+.newsitem-container:hover {
+    background-color: #f5f8fc;
+}
+
+.news-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.news-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.news-footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #666;
+    font-size: 14px;
+}
+
+.divider {
+    font-weight: bold;
+    color: #999;
+}
+
+
+.custom-page-btn {
+    font-size: 0.7rem !important;
+    margin: 0 -5px !important;
+    
+  }
+  
+  .custom-btn {
+    font-size: 0.5rem !important;
+    margin: 0 -10px !important;
+  
+  }

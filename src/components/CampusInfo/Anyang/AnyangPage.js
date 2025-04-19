@@ -1,75 +1,82 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Accordion, AccordionTab } from 'primereact/accordion';
+import 'primereact/resources/themes/lara-light-blue/theme.css'; 
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
 import './AnyangPage.css';
-import Building1 from './Building/Building1';
-import Building2 from './Building/Building2'; 
-import Building3 from './Building/Building3';
-import Building4 from './Building/Building4'; 
-import Building5 from './Building/Building5'; 
-import Building6 from './Building/Building6'; 
-import Building7 from './Building/Building7'; 
-/*import Building8 from './Building/Building8'; */
-import Building9 from './Building/Building9'; 
-/*import Building10 from './Building/Building10'; */
 
 
 
-const AnyangPage = () => {
-  const [selectedBuilding, setSelectedBuilding] = useState(null); // 선택된 건물 상태
-
-  const buildings = [
-    '대신관',
-    '수리관',
-    '수봉관',
-    '일우중앙도서관',
-    '아리관',
-    '비전센터',
-    '창의융합관',
-    '문화관',
-  
-  ];
-
-  const handleBuildingClick = (building) => {
-    setSelectedBuilding(building); // 클릭한 건물 설정
-  };
-
-  const handleBackClick = () => {
-    setSelectedBuilding(null); // 뒤로 가기 클릭 시, 건물 선택 초기화
-  };
-
+const Test = () => {
   return (
-    <div className='anyang-page'>
-      {selectedBuilding ? (
-        <div className='building-detail'>
-          {/* 선택된 건물이 있으면, 해당 건물 정보를 렌더링 */}
-          {selectedBuilding === '대신관' && <Building1 />}
-          {selectedBuilding === '수리관' && <Building2 />}
-          {selectedBuilding === '수봉관' && <Building3 />}
-          {selectedBuilding === '일우중앙도서관' && <Building4 />}
-          {selectedBuilding === '아리관' && <Building5 />}
-          {selectedBuilding === '비전센터' && <Building6 />}
-          {selectedBuilding === '창의융합관' && <Building7 />}
-          {selectedBuilding === '문화관' && <Building9 />}
-          {/*selectedBuilding === '구름, 나뭇잎사이로' && <Building10 />*/}
-          {/*selectedBuilding === '태양광장' && <Building8 />*/}
-
-
-          <button className='back-button' onClick={handleBackClick}>
-            돌아가기
-          </button>
+    <div className="anyang-page">
+          <div className="map-container">
+            <img src="/images/CampusAnyang.png" alt="캠퍼스 지도" className="campus-map" />
+          </div>
+          <Accordion activeIndex={0}>
+            <AccordionTab header="① 대신관"  style={{ margin: 0,  fontSize: '1rem' }}>
+              <ul className="info-content" style={{ margin: 0,  fontSize: '0.8rem' }}>
+                <li><i className="pi pi-circle-fill" 
+                    style={{ marginRight: '10px', color: '#1e90ff',fontSize: '0.6rem'  }}></i>
+                    이공대학 실험실습실, 교수 연구실, 학보사, 복지공간 위치 / 실시간 쌍방향 수업진행 "U-러닝 강의실"</li>
+                
+              </ul>
+            </AccordionTab>
+            <AccordionTab header="② 수리관"  style={{ margin: 0,  fontSize: '1rem' }}>
+              <ul className="info-content" style={{ margin: 0,  fontSize: '0.8rem' }}>
+                <li><i className="pi pi-circle-fill" 
+                    style={{ marginRight: '10px', color: '#1e90ff',fontSize: '0.6rem'  }}></i>
+                    안양대학교 최초의 건물 / 교수, 강사를 위한 휴게실 / 학생 및 교직원의 식당&서점</li>
+    
+              </ul>
+            </AccordionTab>
+            <AccordionTab header="③ 수봉관" style={{ margin: 0,  fontSize: '1rem' }}>
+              <ul className="info-content" style={{ margin: 0,  fontSize: '0.8rem' }}>
+                <li><i className="pi pi-circle-fill" 
+                    style={{ marginRight: '10px', color: '#1e90ff',fontSize: '0.6rem'  }}></i>
+                    14층 높이의 안양대학교 명물 수봉관</li>
+              
+              </ul>
+            </AccordionTab>
+            <AccordionTab header="④ 일우중앙도서관"  style={{ margin: 0,  fontSize: '1rem' }}>
+              <ul className="info-content" style={{ margin: 0,  fontSize: '0.8rem' }}>
+                <li><i className="pi pi-circle-fill" 
+                    style={{ marginRight: '10px', color: '#1e90ff',fontSize: '0.6rem'  }}></i>
+                  멀티미디어실, 영상자료실, 학위논문실, 참고도서자료실, 정기간행물실, 과월호실, 대화실, 제3열람실, 개가자료실3(종교, 예술), 정보검색실, 도서관장실, 수서과</li>
+              </ul>
+            </AccordionTab>
+            <AccordionTab header="⑤ 아리관"  style={{ margin: 0,  fontSize: '1rem' }}>
+              <ul className="info-content" style={{ margin: 0,  fontSize: '0.8rem' }}>
+                <li><i className="pi pi-circle-fill" 
+                    style={{ marginRight: '10px', color: '#1e90ff',fontSize: '0.6rem'  }}></i>
+                 첨단시설을 집합시킨 인텔리전트 건축물 / 아름다운리더의 학습 공간 스터디 룸 / 글로벌 시대에 발맞춰나가는 외국어 교육센터</li>
+              </ul>
+            </AccordionTab>
+            <AccordionTab header="⑥ 비전센터"  style={{ margin: 0,  fontSize: '1rem' }}>
+              <ul className="info-content" style={{ margin: 0,  fontSize: '0.8rem' }}>
+                <li><i className="pi pi-circle-fill" 
+                    style={{ marginRight: '10px', color: '#1e90ff',fontSize: '0.6rem'  }}></i>
+                 최첨단 시설을 갖춘 문화복지공간</li>
+              </ul>
+            </AccordionTab>
+            <AccordionTab header="⑦ 창의융합관"  style={{ margin: 0,  fontSize: '1rem' }}>
+              <ul className="info-content" style={{ margin: 0,  fontSize: '0.8rem' }}>
+                <li><i className="pi pi-circle-fill" 
+                    style={{ marginRight: '10px', color: '#1e90ff',fontSize: '0.6rem'  }}></i>
+                 1층 AI실', '2층 프로젝트실', '3층 창업보육센터</li>
+              </ul>
+            </AccordionTab>
+            <AccordionTab header="⑧ 문화관"  style={{ margin: 0,  fontSize: '1rem' }}>
+              <ul className="info-content" style={{ margin: 0,  fontSize: '0.8rem' }}>
+                <li><i className="pi pi-circle-fill" 
+                    style={{ marginRight: '10px', color: '#1e90ff',fontSize: '0.6rem'  }}></i>
+                음악대학과 다양한 매체공간이 위치한 문화관 / 중소ㆍ벤쳐 기업의 창업촉진을 돕는 창업보육센터</li>
+              </ul>
+            </AccordionTab>
+          </Accordion>
         </div>
-      ) : (
-        <div className='building-list'>
-          {/* AnyangPage 내용 (건물 리스트) */}
-          {buildings.map((building, index) => (
-            <div key={index} className='building-card'onClick={() => handleBuildingClick(building)}>
-               <img src="/images/Placeicon.png" alt="아이콘" className="building-icon" />
-              {building}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
+      );
+    };
 
-export default AnyangPage;
+
+export default Test;

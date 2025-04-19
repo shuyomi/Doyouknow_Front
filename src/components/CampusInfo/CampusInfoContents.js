@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import '../../styles/CampusInfo/CampusInfoContents.css';
 import { TabView, TabPanel } from 'primereact/tabview';
 import AnyangPage from './Anyang/AnyangPage';
-import Ganghwa from './Ganghwa/GanghwaPage';
+import GanghwaPage from './Ganghwa/GanghwaPage';
 
 
-const Test = () => {
+const CampusInfoContents = () => {
 
     return (
         <TabView>
@@ -16,7 +16,7 @@ const Test = () => {
         </TabPanel>
         <TabPanel header="   강화캠퍼스  " pt={{ headerAction: { className: 'ganghwa-tab' } }}>
         <div className="Ganghwa">
-               <Ganghwa />
+               <GanghwaPage />
                 </div>
         </TabPanel>
         
@@ -24,4 +24,4 @@ const Test = () => {
     );
 };
 
-export default Test;
+export default CampusInfoContents;
