@@ -61,7 +61,6 @@ const truncateText = (text, maxLength) => {
 />
 </div>
 </div>
-
     );
 };
 
