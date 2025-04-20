@@ -2,7 +2,7 @@
 .button-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
-    row-gap: 30px; 
+    row-gap: 25px; 
     height: 60vh;
     width: 100%;
     justify-content: center;
@@ -15,11 +15,11 @@
   }
   
   .square-btn {
-    width: 14vh; 
+    width: 15vh; 
     background-color: #e9f2ff78;
     border: none;
     color: rgb(108, 108, 108);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
     border-radius: 15px;  
     cursor: pointer;

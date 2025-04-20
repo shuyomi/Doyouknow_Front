@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import "../../styles/News/NewsList.css";
-import NewsItem from "./NewsItem"; 
+import "../../styles/News/NewsList.css"; 
 import { Paginator } from 'primereact/paginator';
 
 const NewsList = ({ news, onNewsClick }) => {
     const [first, setFirst] = useState(0);
     const [rows, setRows] = useState(10);
 
-
+const truncateText = (text, maxLength) => {
+        return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
+    };
 
     const onPageChange = (event) => {
         setFirst(event.first);
@@ -27,7 +28,7 @@ const NewsList = ({ news, onNewsClick }) => {
                 onClick={() => onNewsClick(item.id)}
             >
                 <div className="news-header">
-                    <span className="news-title">{item.title}</span>
+                <span className="news-title">{truncateText(item.title, 20)}</span>
                 </div>
                 <div className="news-footer">
                     <span className="news-author">{item.author}</span>

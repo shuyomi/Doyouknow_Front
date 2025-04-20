@@ -10,7 +10,7 @@ const NewsItem = ({ item, index, onNewsClick }) => {
     return (
         <tr className="news-item" onClick={() => onNewsClick(item.id)}>
             <td>{index + 1}</td>
-            <td>{truncateText(item.title, 15)}</td> 
+            <td>{truncateText(item.title, 10)}</td> 
             <td>{item.author}</td>
             <td>{item.date}</td>
         </tr>
