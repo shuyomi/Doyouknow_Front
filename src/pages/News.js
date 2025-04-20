@@ -3,13 +3,11 @@ import { useNavigate } from "react-router-dom";
 import '../styles/News/News.css';
 import Header from "../components/News/NewsHeader";
 import NewsList from "../components/News/NewsList";
-import Footer from "../components/News/Footer";
-
 //import axios from "axios";
 
 const News = () => {
 
-
+    
     const navigate = useNavigate();
 
     const news = [
@@ -73,56 +71,6 @@ const News = () => {
             date: "2025.03.17",
             author: "홍보실",
         },
-        {
-            id: 11,
-            title: "우리 대학과 SBS아카데미게임학원 업무협약식",
-            date: "2025.02.18",
-            author: "홍보실",
-        },
-        {
-            id: 12,
-            title: "우리 대학과 SBS아카데미게임학원 업무협약식",
-            date: "2025.02.17",
-            author: "홍보실",
-        },
-        {
-            id: 13,
-            title: "우리 대학과 SBS아카데미게임학원 업무협약식",
-            date: "2025.02.10",
-            author: "홍보실",
-        },
-        {
-            id: 14,
-            title: "우리 대학과 SBS아카데미게임학원 업무협약식",
-            date: "2025.02.05",
-            author: "홍보실",
-        },
-        {
-            id: 15,
-            title: "우리 대학과 SBS아카데미게임학원 업무협약식",
-            date: "2025.01.29",
-            author: "홍보실",
-        },
-        {
-            id: 16,
-            title: "우리 대학과 SBS아카데미게임학원 업무협약식",
-            date: "2025.01.20",
-            author: "홍보실",
-        },
-        {
-            id: 17,
-            title: "우리 대학과 SBS아카데미게임학원 업무협약식",
-            date: "2025.01.17",
-            author: "홍보실",
-        },
-        {
-            id: 18,
-            title: "우리 대학과 SBS아카데미게임학원 업무협약식",
-            date: "2025.01.17",
-            author: "홍보실",
-        },
-
-
 
 
     ];
@@ -148,11 +96,8 @@ const News = () => {
 
     return (
       <div className="News-contents">
-        <Header />
-        <NewsList news={news} onNewsClick={handleNewsClick} />
-        <Footer /> 
-      
-      
+      <Header />
+      <NewsList news={news} onNewsClick={handleNewsClick} /> 
 
       </div>
     );

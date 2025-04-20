@@ -26,6 +26,6 @@ const NewsItem = ({ item, index, onNewsClick }) => {
             <td>{news.date}</td>
         </tr>
     );
-}; */
+};*/
 
 export default NewsItem;

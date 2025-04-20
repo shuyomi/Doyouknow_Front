@@ -1,13 +1,15 @@
+
 import React from "react";
 import { useParams } from "react-router-dom";
 import "../styles/News/NewsDetail.css";
 import Header from "../components/News/NewsHeader";
 //import axios from "axios";
 
-/*const addBaseUrlToImageSrc = (htmlString) => {
+{/*const addBaseUrlToImageSrc = (htmlString) => {
     const parser = new DOMParser(); // HTML 문자열 파싱하여 DOM 생성
     const doc = parser.parseFromString(htmlString, "text/html");
     const images = doc.querySelectorAll("img"); // querySelectorAll를 사용하여 img 태그를 선택
+
     images.forEach((img) => {
         //선택된 img 태그에 대한 수행
         const src = img.getAttribute("src");
@@ -16,15 +18,17 @@ import Header from "../components/News/NewsHeader";
             img.setAttribute("src", `https://www.anyang.ac.kr${src}`); // 앞에 경로 붙여서 return
         }
     });
+
     return doc.body.innerHTML;
 };
-*/
-
-
+*/}
 
 const NewsDetail = () => {
     const { id } = useParams(); // URL에서 ID 가져오기
-     //const [newsData, setNewsData] = useState(null);
+    //const [newsData, setNewsData] = useState(null);
+
+
+
 
     const news = [
         { id: 1, title: "오동국 교수 예술감독, 안양오페라단 정기연주회 개최!", date: "2025.03.21", author: "홍보실", content: "이 공연은..." },
@@ -38,7 +42,9 @@ const NewsDetail = () => {
 
     const newsItem = news.find(item => item.id === parseInt(id));
 
-   {/* useEffect(() => {
+
+
+    {/* useEffect(() => {
         axios
             .get(`http://localhost:8080/news/detail/${id}`)
             .then((res) => {
@@ -47,11 +53,13 @@ const NewsDetail = () => {
             })
             .catch((err) => console.error("API 호출 오류:", err));
     }, [id]);
+
     if (!newsData) {
         return <div>Loading...</div>;
     }
+
     const updatedBody = addBaseUrlToImageSrc(newsData.newsBody);
-    */}
+*/}
 
 
     return (
@@ -64,13 +72,16 @@ const NewsDetail = () => {
             <p className="news-content">{newsItem.newscontent}</p>
          </div>
 
-            {/* <div className="detail">
+
+
+
+
+         {/** <div className="detail">
              <h2 className="title">{newsItem.newsTitle}</h2>
             <p><strong>작성자:</strong> {newsItem.newsAuthor}</p>
             <p><strong>작성일:</strong> {newsItem.newsDate}</p>
             <p className="news-content" dangerouslySetInnerHTML={{ __html: updatedBody || "" }}/>
-         </div> */} 
-
+         </div> */}
         </div>
     );
 };
