@@ -1,34 +1,26 @@
-.notice-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #fff;
-  margin-top: 5px;
-  margin-bottom: 5px; 
-  padding: 10px 20px;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+
+.header{
+    background-color: #ffffff;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+
 }
 
-.notice-header h1 {
-  margin: 3px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #333; /* Dark text color for contrast */
-}
+.header-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 
-.notice-header a {
-  font-size: 18px;
-  color: #007BFF; /* Blue color for the link */
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-}
 
-.notice-header a:hover {
-  text-decoration: underline; /* Underline effect on hover */
-}
-
-.notice-header a::before {
-  content: "←";
-  margin-right: 5px;
-}
+  
+  .header-title {
+    font-size: 20px !important;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
+  }

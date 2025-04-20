@@ -1,34 +1,26 @@
-.schedule-header {
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+
+.header{
+    background-color: #ffffff;
+    height: 10%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #fff;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 10px 20px;
+    padding: 0px 10px;
+
 }
 
-.schedule-header h1 {
-    margin: 3px;
-    font-size: 24px;
+.header-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+
+  
+  .header-title {
+    font-size: 20px !important;
     font-weight: bold;
-    color: #333; /* Dark text color for contrast */
-}
-
-.schedule-header a {
-    font-size: 18px;
-    color: #007bff; /* Blue color for the link */
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-}
-
-.schedule-header a:hover {
-    text-decoration: underline; /* Underline effect on hover */
-}
-
-.schedule-header a::before {
-    content: "←";
-    margin-right: 5px;
-}
+    font-family: 'Noto Sans KR', sans-serif;
+  }

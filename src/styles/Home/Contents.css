@@ -1,8 +1,8 @@
 .contents{
     background-color: #ffffff;
-    height: 70vh;
     width: 100%;
     border-radius: 60px 60px 0 0;
-    border: 1px solid rgb(255, 255, 255); /*배경이 흰색이어서 임시로*/
+    /*border: 5px solid rgb(245, 1, 1); /*배경이 흰색이어서 임시로*/
     box-shadow: 3px -5px 8px rgba(113, 112, 112, 0.159);
+
   }

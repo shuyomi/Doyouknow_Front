@@ -3,7 +3,9 @@
 }
 
 .faqlist-container {
-    margin-top: 50px;
+    height: calc(100vh - 220px);
+    overflow-y: auto;
+    margin-top: 40px;
     margin-left: 25px;
     margin-right: 25px;
     cursor: pointer;

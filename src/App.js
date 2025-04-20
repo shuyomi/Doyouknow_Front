@@ -10,7 +10,11 @@ import ContactInfo from "./pages/ContactInfo";
 import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
 import Schedule from "./pages/Schedule";
-import "./App.css";
+
+
+import 'primereact/resources/themes/lara-light-blue/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
 
 function App() {
     return (
