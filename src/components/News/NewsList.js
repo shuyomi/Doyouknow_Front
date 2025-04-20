@@ -1,5 +1,9 @@
 import React from "react";
 import "../../styles/News/NewsList.css";
+import NewsItem from "./NewsItem"; 
+
+
+
 
 const NewsList = ({ news, onNewsClick }) => {
     return (
@@ -14,14 +18,12 @@ const NewsList = ({ news, onNewsClick }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {news.map((item, index) => (
-                        <tr key={item.id} onClick={() => onNewsClick(item.id)} className="news-item">
-                            <td>{index + 1}</td>
-                            <td>{item.title}</td>
-                            <td>{item.author}</td>
-                            <td>{item.date}</td>
-                        </tr>
+                {news.map((item, index) => (
+                        <NewsItem key={item.id} item={item} index={index} onNewsClick={onNewsClick} />
                     ))}
+                    {/*{news.map(news) => (
+                        <NewsItem key={news.id} news={news} onNewsClick={onNewsClick} />
+                    ))} */}
                 </tbody>
             </table>
         </div>
