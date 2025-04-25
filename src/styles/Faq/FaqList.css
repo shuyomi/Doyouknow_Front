@@ -1,0 +1,66 @@
+.answer {
+    display: none;
+}
+
+.faqlist-container {
+    height: calc(100vh - 220px);
+    overflow-y: auto;
+    margin-top: 40px;
+    margin-left: 25px;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.faq-question,
+.faq-answer {
+    display: flex; /* Flexbox를 사용하여 가로로 배치 */
+    align-items: flex-start; /* 세로 정렬을 시작점으로 설정 */
+}
+
+.faq-question {
+    margin-top: 30px;
+}
+
+.faq-answer {
+    margin-bottom: 30px;
+    margin-top: 1px;
+}
+
+.faqlist-q,
+.faqlist-a {
+    width: 36px;
+    height: 36px;
+    font-size: 35px;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 10px; /* Q와 텍스트 사이의 간격 */
+    flex-shrink: 0; /* 내용이 넘칠 때 줄어들지 않도록 설정 */
+}
+
+.faqlist-q {
+    color: #18a0fb;
+}
+
+.faqlist-a {
+    color: #fdd000;
+}
+
+.faqlist-qDetail,
+.faqlist-aDetail {
+    flex-grow: 1; /* 남은 공간을 채우도록 설정 */
+    word-break: break-word; /* 긴 단어 줄바꿈 처리 */
+    margin-top: 5px; /* 약간의 여백 추가 */
+}
+
+.faqlist-qDetail {
+    font-weight: bold;
+}
+
+.faqlist-aDetail {
+    color: #747473;
+}
+
+.faqlist-hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

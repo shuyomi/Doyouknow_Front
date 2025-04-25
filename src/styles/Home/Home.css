@@ -1,0 +1,8 @@
+.back{
+  width: 100%;
+
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto; 
+  background-color: #eaf2fe;
+}

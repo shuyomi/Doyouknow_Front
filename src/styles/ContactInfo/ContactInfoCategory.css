@@ -1,0 +1,28 @@
+.contactInfo-category-container {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #99A3BA;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.contactInfo-category-btn {
+    flex: 1;  /* 버튼들을 동일한 너비로 만듦 */
+    padding: 10px;
+    font-size: 14px;
+    color: #003399;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contactInfo-category-btn:hover {
+    color: #001F66;
+}
+
+.contactInfo-category-btn.active {
+    background-color: #003399;
+    color: white;
+    border-radius: 5px;
+}
