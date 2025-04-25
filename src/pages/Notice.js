@@ -8,26 +8,32 @@ const Notice = () => {
     const [selectedCategory, setSelectedCategory] = useState("전체");
     const [notices, setNotices] = useState([]);
 
+    const categories = ["전체", "대학교", "학사", "대학원", "취업", "입찰채용"];
+
     useEffect(() => {
-        axios
-            .get("http://localhost:8080/notice/all")
-            .then((res) => {
+        const fetchNotices = async () => {
+            try {
+                let url = "http://localhost:8080/notice/all";
+                if (selectedCategory !== "전체") {
+                    url = `http://localhost:8080/notice/category?noticeCategory=${encodeURIComponent(
+                        selectedCategory
+                    )}`;
+                }
+
+                const res = await axios.get(url);
                 console.log("API 응답:", res.data);
                 setNotices(res.data.content);
-            })
-            .catch((err) => console.error("API 호출 오류:", err));
-    }, []);
+            } catch (err) {
+                console.error("API 호출 오류:", err);
+            }
+        };
 
-    const categories = ["전체", "대학교", "학사", "대학원", "취업", "입찰채용"];
+        fetchNotices();
+    }, [selectedCategory]); // 카테고리 바뀔 때마다 호출
 
     const handleSelectCategory = (category) => {
         setSelectedCategory(category);
     };
-
-    const filteredNotices =
-        selectedCategory === "전체"
-            ? notices
-            : notices.filter((notice) => notice.category === selectedCategory);
 
     return (
         <div>
@@ -37,7 +43,7 @@ const Notice = () => {
                 onSelectCategory={handleSelectCategory}
                 selectedCategory={selectedCategory}
             />
-            <NoticeList notices={filteredNotices} />
+            <NoticeList notices={notices} />
         </div>
     );
 };
