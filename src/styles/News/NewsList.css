@@ -1,17 +1,12 @@
 .news-box {
     width: 100%;
-
 }
 
 .news-list {
     width: 85%;
     margin: 15px auto;
     display: flex;
-    overflow-y: auto;
-    height: 70vh;
     flex-direction: column;
-    gap: 12px;
-    
 }
 
 /* 카드 스타일 */
@@ -53,15 +48,12 @@
     color: #999;
 }
 
-
 .custom-page-btn {
     font-size: 0.7rem !important;
     margin: 0 -5px !important;
-    
-  }
-  
-  .custom-btn {
+}
+
+.custom-btn {
     font-size: 0.5rem !important;
     margin: 0 -10px !important;
-  
-  }
+}

@@ -1,72 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../styles/News/NewsList.css";
 import { Paginator } from "primereact/paginator";
 import NewsItem from "./NewsItem";
 
-const NewsList = ({ newslist }) => {
-    // const [first, setFirst] = useState(0);
-    // const [rows, setRows] = useState(10);
-
-    // const truncateText = (text, maxLength) => {
-    //     return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
-    // };
-
-    // const onPageChange = (event) => {
-    //     setFirst(event.first);
-    //     setRows(event.rows);
-    // };
-
-    // const sortedNews = [...news].sort((a, b) => new Date(b.date) - new Date(a.date)); // 날짜 기준 정렬
-    // const currentNews = sortedNews.slice(first, first + rows);
-
+const NewsList = ({ newslist, page, size, totalRecords, onPageChange }) => {
     return (
-        <div>
-            {newslist.map((newsDetail) => (
-                <NewsItem key={newsDetail.id} newsDetail={newsDetail} />
-            ))}
-        </div>
-        // <div className="news-box">
-        //     <div className="news-list">
-        //         {currentNews.map((item, index) => (
-        //             <div
-        //                 key={item.id}
-        //                 className="newsitem-container"
-        //                 onClick={() => onNewsClick(item.id)}
-        //             >
-        //                 <div className="news-header">
-        //                     <span className="news-title">{truncateText(item.title, 20)}</span>
-        //                 </div>
-        //                 <div className="news-footer">
-        //                     <span className="news-author">{item.author}</span>
-        //                     <span className="divider">|</span>
-        //                     <span className="news-date">{item.date}</span>
-        //                     <span className="divider">|</span>
-        //                     <span className="news-number">No. {first + index + 1}</span>
-        //                 </div>
-        //             </div>
-        //         ))}
-        //     </div>
+        <div className="news-box">
+            <div className="news-list">
+                {newslist.map((newsDetail) => (
+                    <NewsItem key={newsDetail.id} newsDetail={newsDetail} />
+                ))}
+            </div>
 
-        //     <div style={{ margin: "0 -10px" }}>
-        //         <Paginator
-        //             first={first}
-        //             rows={rows}
-        //             totalRecords={news.length}
-        //             onPageChange={onPageChange}
-        //             pt={{
-        //                 pageButton: {
-        //                     className: "custom-page-btn",
-        //                 },
-        //                 nextPageButton: {
-        //                     className: "custom-btn",
-        //                 },
-        //                 prevPageButton: {
-        //                     className: "custom-btn",
-        //                 },
-        //             }}
-        //         />
-        //     </div>
-        // </div>
+            <div style={{ margin: "0 -10px" }}>
+                <Paginator
+                    first={page * size} // 시작 인덱스
+                    rows={size} // 페이지 당 데이터 수
+                    totalRecords={totalRecords} // 전체 데이터 수
+                    onPageChange={onPageChange} // 페이지 바뀔 때 함수
+                    pt={{
+                        pageButton: { className: "custom-page-btn" },
+                        nextPageButton: { className: "custom-btn" },
+                        prevPageButton: { className: "custom-btn" },
+                    }}
+                />
+            </div>
+        </div>
     );
 };
 
