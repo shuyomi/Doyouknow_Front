@@ -3,36 +3,46 @@ import NoticeHeader from "../components/Notice/NoticeHeader";
 import NoticeCategory from "../components/Notice/NoticeCategory";
 import NoticeList from "../components/Notice/NoticeList";
 import axios from "axios";
+import { Paginator } from "primereact/paginator";
 
 const Notice = () => {
     const [selectedCategory, setSelectedCategory] = useState("전체");
     const [notices, setNotices] = useState([]);
+    const [page, setPage] = useState(0); // 현재 페이지 (0부터 시작)
+    const [size, setSize] = useState(10); // 한 페이지에 보여줄 수
+    const [totalRecords, setTotalRecords] = useState(0); // 전체 게시글 수
 
     const categories = ["전체", "대학교", "학사", "대학원", "취업", "입찰채용"];
 
-    useEffect(() => {
-        const fetchNotices = async () => {
-            try {
-                let url = "http://localhost:8080/notice/all";
-                if (selectedCategory !== "전체") {
-                    url = `http://localhost:8080/notice/category?noticeCategory=${encodeURIComponent(
-                        selectedCategory
-                    )}`;
-                }
-
-                const res = await axios.get(url);
-                console.log("API 응답:", res.data);
-                setNotices(res.data.content);
-            } catch (err) {
-                console.error("API 호출 오류:", err);
+    const fetchNotices = async () => {
+        try {
+            let url = `http://localhost:8080/notice/all?page=${page}&size=${size}`;
+            if (selectedCategory !== "전체") {
+                url = `http://localhost:8080/notice/category?noticeCategory=${encodeURIComponent(
+                    selectedCategory
+                )}&page=${page}&size=${size}`;
             }
-        };
 
+            const res = await axios.get(url);
+            console.log("API 응답:", res.data);
+            setNotices(res.data.content);
+            setTotalRecords(res.data.totalElements);
+        } catch (err) {
+            console.error("API 호출 오류:", err);
+        }
+    };
+
+    useEffect(() => {
         fetchNotices();
-    }, [selectedCategory]); // 카테고리 바뀔 때마다 호출
+    }, [selectedCategory, page]); // 카테고리나 페이지 바뀔 때마다 호출
 
     const handleSelectCategory = (category) => {
         setSelectedCategory(category);
+        setPage(0); // 카테고리 바뀌면 페이지 0으로 초기화
+    };
+
+    const handlePageChange = (event) => {
+        setPage(event.page); // 페이지 이동
     };
 
     return (
@@ -44,6 +54,19 @@ const Notice = () => {
                 selectedCategory={selectedCategory}
             />
             <NoticeList notices={notices} />
+            <div style={{ margin: "0 -10px" }}>
+                <Paginator
+                    first={page * size}
+                    rows={size}
+                    totalRecords={totalRecords}
+                    onPageChange={handlePageChange}
+                    pt={{
+                        pageButton: { className: "custom-page-btn" },
+                        nextPageButton: { className: "custom-btn" },
+                        prevPageButton: { className: "custom-btn" },
+                    }}
+                />
+            </div>
         </div>
     );
 };
