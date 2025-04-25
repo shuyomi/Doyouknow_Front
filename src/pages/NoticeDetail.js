@@ -8,7 +8,7 @@ import "../styles/Notice/NoticeDetail.css";
 const addBaseUrlToImageSrc = (htmlString) => {
     const parser = new DOMParser(); // HTML 문자열 파싱하여 DOM 생성
     const doc = parser.parseFromString(htmlString, "text/html");
-    const images = doc.querySelectorAll("img"); // querySelectorAll를 사용하여 img 태그를 선택
+    const images = doc.querySelectorAll("img"); // 모든 img 태그 선택
 
     images.forEach((img) => {
         //선택된 img 태그에 대한 수행
@@ -17,6 +17,10 @@ const addBaseUrlToImageSrc = (htmlString) => {
             // src값이 존재하며, 절대경로로 시작하지 않으면
             img.setAttribute("src", `https://www.anyang.ac.kr${src}`); // 앞에 경로 붙여서 return
         }
+
+        // 이미지 크기 설정
+        img.setAttribute("width", "400");
+        img.setAttribute("height", "600");
     });
 
     return doc.body.innerHTML;
@@ -51,7 +55,7 @@ const NoticeDetail = () => {
                 <div className="notice-footer">
                     <span className="date">{noticeData.noticeDate}</span>
                     <span className="divider">|</span>
-                    <span className="author">{noticeData.noticeDormitory}</span>
+                    <span className="author">{noticeData.noticeWriter}</span>
                 </div>
                 <hr className="body-top" />
                 <div

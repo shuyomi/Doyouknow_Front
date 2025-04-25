@@ -13,7 +13,7 @@ const Notice = () => {
             .get("http://localhost:8080/notice/all")
             .then((res) => {
                 console.log("API 응답:", res.data);
-                setNotices(res.data);
+                setNotices(res.data.content);
             })
             .catch((err) => console.error("API 호출 오류:", err));
     }, []);

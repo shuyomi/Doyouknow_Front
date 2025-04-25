@@ -20,7 +20,7 @@ const NoticeItem = ({ notice }) => {
                 <div className="notice-footer">
                     <span className="date">{notice.noticeDate}</span>
                     <span className="divider">|</span>
-                    <span className="author">{notice.noticeDormitory}</span>
+                    <span className="author">{notice.noticeWriter}</span>
                 </div>
             </div>
         </Link>
