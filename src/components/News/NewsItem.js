@@ -1,31 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "../../styles/News/NewsItem.css";
 
 const truncateText = (text, maxLength) => {
     return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
 };
 
-
-
-const NewsItem = ({ item, index, onNewsClick }) => {
+const NewsItem = ({ newsDetail }) => {
     return (
-        <tr className="news-item" onClick={() => onNewsClick(item.id)}>
-            <td>{index + 1}</td>
-            <td>{truncateText(item.title, 10)}</td> 
-            <td>{item.author}</td>
-            <td>{item.date}</td>
-        </tr>
+        <Link to={`/news/detail/${newsDetail.id}`} className="newsitem-link">
+            <div className="noticeitem-container">
+                <div className="notice-header">
+                    <span className="category-title">{truncateText(newsDetail.newsTitle, 17)}</span>
+                </div>
+                <div className="notice-footer">
+                    <span className="date">{newsDetail.newsDate}</span>
+                    <span className="divider">|</span>
+                    <span className="writer">{newsDetail.newsWriter}</span>
+                </div>
+            </div>
+        </Link>
     );
 };
-
-/*const NewsItem = ({ news, onNewsClick}) => {
-    return (
-        <tr className="news-item" onClick={() => onNewsClick(item.id)}>
-            <td>{news.newsNumber}</td>
-            <td>{truncateText(news.newsTitle, 20)}</td> 
-            <td>{news.author}</td>
-            <td>{news.date}</td>
-        </tr>
-    );
-};*/
 
 export default NewsItem;

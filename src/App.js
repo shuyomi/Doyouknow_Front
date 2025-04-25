@@ -11,10 +11,9 @@ import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
 import Schedule from "./pages/Schedule";
 
-
-import 'primereact/resources/themes/lara-light-blue/theme.css';
-import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
+import "primereact/resources/themes/lara-light-blue/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
 
 function App() {
     return (
@@ -29,7 +28,7 @@ function App() {
                     <Route path="/campusInfo" element={<CampusInfo />} />
                     <Route path="/contactInfo" element={<ContactInfo />} />
                     <Route path="/news" element={<News />} />
-                    <Route path="/news/:id" element={<NewsDetail />} />
+                    <Route path="/news/detail/:id" element={<NewsDetail />} />
                     <Route path="/schedule" element={<Schedule />} />
                 </Routes>
             </BrowserRouter>

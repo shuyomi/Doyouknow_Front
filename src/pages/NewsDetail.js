@@ -1,14 +1,14 @@
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../styles/News/NewsDetail.css";
 import Header from "../components/News/NewsHeader";
-//import axios from "axios";
+import axios from "axios";
 
-{/*const addBaseUrlToImageSrc = (htmlString) => {
+// img 태그의 이미지 상대 경로를 절대 경로로 바꿔주는 함수
+const addBaseUrlToImageSrc = (htmlString) => {
     const parser = new DOMParser(); // HTML 문자열 파싱하여 DOM 생성
     const doc = parser.parseFromString(htmlString, "text/html");
-    const images = doc.querySelectorAll("img"); // querySelectorAll를 사용하여 img 태그를 선택
+    const images = doc.querySelectorAll("img"); // 모든 img 태그 선택
 
     images.forEach((img) => {
         //선택된 img 태그에 대한 수행
@@ -17,34 +17,20 @@ import Header from "../components/News/NewsHeader";
             // src값이 존재하며, 절대경로로 시작하지 않으면
             img.setAttribute("src", `https://www.anyang.ac.kr${src}`); // 앞에 경로 붙여서 return
         }
+
+        // 이미지 크기 설정
+        img.setAttribute("width", "400");
+        img.setAttribute("height", "600");
     });
 
     return doc.body.innerHTML;
 };
-*/}
 
 const NewsDetail = () => {
     const { id } = useParams(); // URL에서 ID 가져오기
-    //const [newsData, setNewsData] = useState(null);
+    const [newsData, setNewsData] = useState(null);
 
-
-
-
-    const news = [
-        { id: 1, title: "오동국 교수 예술감독, 안양오페라단 정기연주회 개최!", date: "2025.03.21", author: "홍보실", content: "이 공연은..." },
-        { id: 2, title: "스포츠산업체육학과 산학협력 업무협약 체결!", date: "2025.03.20", author: "홍보실", content: "협약 내용은..." },
-        { id: 3, title: "제26기 여성지도자 아카데미 입학식 성료!", date: "2025.03.19", author: "홍보실", content: "입학식이 성황리에..." },
-        { id: 4, title: "우리 대학 스포츠단 검도부 장지원 선수 2025 검도 국가대표 상비군 선발!", date: "2025.03.19", author: "홍보실", content: "입학식이 성황리에..." },
-        { id: 5, title: "우리 대학과 피닉스스튜디오 업무협약 체결!", date: "2025.03.19", author: "홍보실", content: "입학식이 성황리에..." },
-        { id: 6, title: "우리 대학과 SBS아카데미게임학원 업무협약식", date: "2025.03.19", author: "홍보실", content: "입학식이 성황리에..." },
-
-    ];
-
-    const newsItem = news.find(item => item.id === parseInt(id));
-
-
-
-    {/* useEffect(() => {
+    useEffect(() => {
         axios
             .get(`http://localhost:8080/news/detail/${id}`)
             .then((res) => {
@@ -59,29 +45,24 @@ const NewsDetail = () => {
     }
 
     const updatedBody = addBaseUrlToImageSrc(newsData.newsBody);
-*/}
-
 
     return (
         <div className="news-detail">
-             <Header />
-             <div className="detail">
-             <h2 className="title">{newsItem.title}</h2>
-            <p><strong>작성자:</strong> {newsItem.author}</p>
-            <p><strong>작성일:</strong> {newsItem.date}</p>
-            <p className="news-content">{newsItem.newscontent}</p>
-         </div>
-
-
-
-
-
-         {/** <div className="detail">
-             <h2 className="title">{newsItem.newsTitle}</h2>
-            <p><strong>작성자:</strong> {newsItem.newsAuthor}</p>
-            <p><strong>작성일:</strong> {newsItem.newsDate}</p>
-            <p className="news-content" dangerouslySetInnerHTML={{ __html: updatedBody || "" }}/>
-         </div> */}
+            <Header />
+            <div className="noticeDetail-container">
+                <div className="noticeDetail-title">{newsData.newsTitle}</div>
+                <hr className="title-footer" />
+                <div className="notice-footer">
+                    <span className="date">{newsData.newsDate}</span>
+                    <span className="divider">|</span>
+                    <span className="author">{newsData.newsWriter}</span>
+                </div>
+                <hr className="body-top" />
+                <div
+                    className="noticeDetail-body"
+                    dangerouslySetInnerHTML={{ __html: updatedBody || "" }}
+                />
+            </div>
         </div>
     );
 };
