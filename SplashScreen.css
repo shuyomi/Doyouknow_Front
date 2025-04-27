@@ -1,0 +1,51 @@
+.splash-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e9f2ff78;
+    animation: fadeIn 1.5s ease-in;
+  }
+  .splash-logo {
+    width: 150px;   
+    height: auto;
+    margin-bottom: 15px;
+    animation: popUp 1s ease-in-out;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: -10px;
+    animation: popUp 1s ease-in-out;
+  }
+
+  .logo-se{
+    font-size: 20px;
+    font-weight: bold;
+    animation: popUp 1s ease-in-out;
+  }
+  
+  .loading-text {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+    animation: blink 1.5s infinite;
+  }
+  
+  /* 애니메이션 정의 */
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @keyframes popUp {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
