@@ -17,7 +17,7 @@ const Test = () => {
             <AccordionTab header="① 대신관"  style={{ margin: 0,  fontSize: '1rem' }}>
               <ul className="info-content" style={{ margin: 0,  fontSize: '0.8rem' }}>
                 <li><i className="pi pi-circle-fill" 
-                    style={{ marginRight: '10px', color: '#fefefe',fontSize: '0.6rem'  }}></i>
+                    style={{ marginRight: '10px', color: '#1e90ff',fontSize: '0.6rem'  }}></i>
                     이공대학 실험실습실, 교수 연구실, 학보사, 복지공간 위치 / 실시간 쌍방향 수업진행 "U-러닝 강의실"</li>
                 
               </ul>
