@@ -9,11 +9,11 @@ const truncateText = (text, maxLength) => {
 const NewsItem = ({ newsDetail }) => {
     return (
         <Link to={`/news/detail/${newsDetail.id}`} className="newsitem-link">
-            <div className="noticeitem-container">
-                <div className="notice-header">
-                    <span className="category-title">{truncateText(newsDetail.newsTitle, 17)}</span>
+            <div className="news-container">
+                <div className="news-header">
+                    <span className="category-title">{truncateText(newsDetail.newsTitle, 23)}</span>
                 </div>
-                <div className="notice-footer">
+                <div className="news-footer">
                     <span className="date">{newsDetail.newsDate}</span>
                     <span className="divider">|</span>
                     <span className="writer">{newsDetail.newsWriter}</span>
