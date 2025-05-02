@@ -12,7 +12,7 @@ const NewsList = ({ newslist, page, size, totalRecords, onPageChange }) => {
                 ))}
             </div>
 
-            <div style={{ margin: "0 -10px" }}>
+            <div style={{ margin: "-20px -10px" }}>
                 <Paginator
                     first={page * size} // 시작 인덱스
                     rows={size} // 페이지 당 데이터 수

@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/Notice/NoticeCategory.css";
-import { TabView, TabPanel } from 'primereact/tabview';
+import { TabView, TabPanel } from "primereact/tabview";
 
 const NoticeCategory = ({ categories, onSelectCategory, selectedCategory }) => {
     const handleTabChange = (e) => {
@@ -10,30 +10,29 @@ const NoticeCategory = ({ categories, onSelectCategory, selectedCategory }) => {
 
     return (
         <div className="notice-category-tabview">
-    <TabView
-        activeIndex={categories.indexOf(selectedCategory)}
-        onTabChange={handleTabChange}
-        pt={{
-            nav: { style: { gap: '4px' } }, 
-        }}
-    >
-        {categories.map((category) => (
-            <TabPanel
-                key={category}
-                header={category}
+            <TabView
+                activeIndex={categories.indexOf(selectedCategory)}
+                onTabChange={handleTabChange}
                 pt={{
-                    headerAction: {
-                        style: {
-                            fontSize: '12px',      
-                            padding: '15px 10px',   
-                        }
-                    }
+                    nav: { style: { gap: "4px" } },
                 }}
-            />
-        ))}
-    </TabView>
-</div>
-
+            >
+                {categories.map((category) => (
+                    <TabPanel
+                        key={category}
+                        header={category}
+                        pt={{
+                            headerAction: {
+                                style: {
+                                    fontSize: "12px",
+                                    padding: "15px 12px",
+                                },
+                            },
+                        }}
+                    />
+                ))}
+            </TabView>
+        </div>
     );
 };
 export default NoticeCategory;
