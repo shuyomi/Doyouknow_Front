@@ -19,3 +19,7 @@
 .notice-category-btn.selected {
     color: blue;
 }
+
+.notice-category-tabview .p-tabview-panels {
+    display: none;
+}

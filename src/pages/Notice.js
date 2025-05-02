@@ -12,13 +12,13 @@ const Notice = () => {
     const [size, setSize] = useState(10); // 한 페이지에 보여줄 수
     const [totalRecords, setTotalRecords] = useState(0); // 전체 게시글 수
 
-    const categories = ["전체", "대학교", "학사", "대학원", "취업", "입찰채용"];
+    const categories = ["전체", "대학교", "학사", "대학원", "취업정보", "입찰/채용"];
 
     const fetchNotices = async () => {
         try {
-            let url = `http://localhost:8080/notice/all?page=${page}&size=${size}`;
+            let url = `http://15.164.79.59:8080/notice/all?page=${page}&size=${size}`;
             if (selectedCategory !== "전체") {
-                url = `http://localhost:8080/notice/category?noticeCategory=${encodeURIComponent(
+                url = `http://15.164.79.59:8080/notice/category?noticeCategory=${encodeURIComponent(
                     selectedCategory
                 )}&page=${page}&size=${size}`;
             }
@@ -54,7 +54,7 @@ const Notice = () => {
                 selectedCategory={selectedCategory}
             />
             <NoticeList notices={notices} />
-            <div style={{ margin: "0 -10px" }}>
+            <div style={{ margin: "-10px -10px" }}>
                 <Paginator
                     first={page * size}
                     rows={size}

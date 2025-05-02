@@ -32,7 +32,7 @@ const NewsDetail = () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8080/news/detail/${id}`)
+            .get(`http://15.164.79.59:8080/news/detail/${id}`)
             .then((res) => {
                 console.log("Detail API 응답:", res.data);
                 setNewsData(res.data);
