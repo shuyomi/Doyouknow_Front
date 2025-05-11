@@ -13,7 +13,7 @@ const News = () => {
     const fetchNews = useCallback(
         (page) => {
             axios
-                .get(`http://15.164.79.59:8080/news/all?page=${page}&size=${size}`)
+                .get(`https://doyouknow.shop/news/all?page=${page}&size=${size}`)
                 .then((res) => {
                     setNewslist(res.data.content);
                     setTotalRecords(res.data.totalElements);

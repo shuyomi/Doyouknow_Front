@@ -16,9 +16,9 @@ const Notice = () => {
 
     const fetchNotices = async () => {
         try {
-            let url = `http://15.164.79.59:8080/notice/all?page=${page}&size=${size}`;
+            let url = `https://doyouknow.shop:/notice/all?page=${page}&size=${size}`;
             if (selectedCategory !== "전체") {
-                url = `http://15.164.79.59:8080/notice/category?noticeCategory=${encodeURIComponent(
+                url = `https://doyouknow.shop/notice/category?noticeCategory=${encodeURIComponent(
                     selectedCategory
                 )}&page=${page}&size=${size}`;
             }
