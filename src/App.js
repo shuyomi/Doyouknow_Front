@@ -43,7 +43,7 @@ function App() {
                     <Route path="/campusInfo" element={<CampusInfo />} />
                     <Route path="/contactInfo" element={<ContactInfo />} />
                     <Route path="/news" element={<News />} />
-                    <Route path="/news/:id" element={<NewsDetail />} />
+                    <Route path="/news/detail/:id" element={<NewsDetail />} />
                     <Route path="/schedule" element={<Schedule />} />
                 </Routes>
             </BrowserRouter>
