@@ -20,6 +20,11 @@
     margin-right: 8px;
 }
 
+.search-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 .search-button {
     padding: 5px 15px;
     margin-right: -10px;
