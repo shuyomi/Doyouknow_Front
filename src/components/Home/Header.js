@@ -19,7 +19,7 @@ const Header = () => {
         <div className="header">
             <div className="left">AYU</div>
             <div className="right" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-                ☰
+                <img className="menuImage" src="/images/menu.png" alt="menu" />
             </div>
             {/* 사이드바 */}
             <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
