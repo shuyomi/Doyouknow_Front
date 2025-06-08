@@ -30,7 +30,7 @@ const Footer = () => {
         </a>
 
         <a
-         href="https://naver.me/yourformlink"
+         href="https://foam-surfboard-927.notion.site/20c06665d9df800aa1a1e32c5fb8cf75?pvs=105"
         target="_blank"
         rel="noopener noreferrer"
         className="footer-item"
