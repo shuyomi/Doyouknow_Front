@@ -20,8 +20,7 @@ const buildings = [
   { id: 4, name: "일우중앙도서관"},
   { id: 5, name: "아리관"},
   { id: 6, name: "비전관"},
-  { id: 7, name: "문화예술관"},
-  { id: 8, name: " "}
+  { id: 7, name: "문화예술관"}
 ];
 
 const Test = () => {

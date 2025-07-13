@@ -7,9 +7,9 @@ const Slider = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const images = [
-        "/images/slide3.png", 
+        "/images/slide3.png",
+        "/images/slide1.png",
         "/images/slide2.png",
-        "/images/slide1.png", 
 
     ];
 
