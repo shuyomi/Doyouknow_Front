@@ -2,14 +2,15 @@ import React from "react";
 import "../../styles/Home/Slider.css";
 import { useState, useEffect } from "react";
 
-// 슬라이드는 임시로 만든거라서 크롤링 하면 어떻게 할지 수정필요
 
 const Slider = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const images = [
-        "/images/slide1.png", // public/images/slide1.png
-        "/images/slide2.png", // public/images/image2.jpg
+        "/images/slide3.png",
+        "/images/slide1.png",
+        "/images/slide2.png",
+
     ];
 
     useEffect(() => {
@@ -20,11 +21,54 @@ const Slider = () => {
         return () => clearInterval(interval);
     }, [images.length]);
 
-    return (
-        <div className="slide">
-            <img src={images[currentIndex]} alt="슬라이드 이미지" />
-        </div>
-    );
-};
+    const handleImageClick = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
 
+    const slideImage = (
+        <img
+            src={images[currentIndex]}
+            alt={`슬라이드 이미지 ${currentIndex + 1}`}
+            onClick={handleImageClick}
+            style={{ cursor: "pointer" }}
+        />
+    );
+    
+
+    return (
+        <div className="slide-box">
+        <div className="slide">
+            {images[currentIndex] === "/images/slide3.png" ? (
+                <a
+                    href="https://www.anyang.ac.kr/main/communication/notice.do?mode=view&articleNo=33074&article.offset=0&articleLimit=15&srSearchVal=%EC%A2%85%ED%95%A9%EA%B0%95%EC%9D%98%EC%8B%9C%EA%B0%84%ED%91%9C"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src={images[currentIndex]}
+                        alt={`슬라이드 이미지 ${currentIndex + 1}`}
+                    />
+                </a>
+            ) : (
+                <img
+                    src={images[currentIndex]}
+                    alt={`슬라이드 이미지 ${currentIndex + 1}`}
+                />
+            )}
+        </div>
+
+        {/* 인디케이터 (동그라미) */}
+        <div className="indicator">
+            {images.map((_, index) => (
+                <span
+                    key={index}
+                    className={`dot ${index === currentIndex ? "active" : ""}`}
+                    onClick={() => setCurrentIndex(index)}
+                ></span>
+            ))}
+            
+        </div>
+    </div>
+        );
+    };
 export default Slider;
