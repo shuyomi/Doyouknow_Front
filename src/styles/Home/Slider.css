@@ -1,15 +1,21 @@
+.slide-box{
+  height: 10rem;
+    width: 100%;
+   /* border: 3px solid rgb(154, 38, 38);*/
+    position: relative;
+}
+
 .slide{
-    background-color: #a4a4a5;
-    height: 20%;
+    /*background-color: #a4a4a5;*/
+    height: 80%;
     width: 95%;
-    margin-top: 10px;
-    margin: 20px auto;
+    margin: 10px auto;
     display: flex;
     flex-direction: column;
     border-radius: 30px;
     overflow: hidden;
     position: relative;
-    border: 1px solid rgb(156, 156, 156);
+    /*border: 1px solid rgb(156, 156, 156);*/
   
   }
 
@@ -20,3 +26,27 @@
     transition: transform 1s ease-in-out; /* 부드러운 전환 효과 */
   }
 
+.indicator {
+     position: absolute;
+  bottom: 10px; /* 이미지 하단에서의 거리 (0으로 하면 완전 밀착) */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #333;
+}
