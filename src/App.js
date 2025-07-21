@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SplashScreen from './pages/SplashScreen';
 import Home from "./pages/Home";
 import Lost from "./pages/Lost";
 import Notice from "./pages/Notice";
@@ -16,6 +17,20 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 
 function App() {
+    const [isSplashVisible, setIsSplashVisible] = useState(true);
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setIsSplashVisible(false);
+      }, 3000); 
+  
+      return () => clearTimeout(timer);
+    }, []);
+  
+    if (isSplashVisible) {
+        return <SplashScreen onFinish={() => setIsSplashVisible(false)} />; 
+    }
+
     return (
         <div className="App">
             <BrowserRouter>
