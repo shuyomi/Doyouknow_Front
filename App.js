@@ -12,7 +12,6 @@ import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
 import Schedule from "./pages/Schedule";
 
-
 import 'primereact/resources/themes/lara-light-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
@@ -23,7 +22,7 @@ function App() {
     useEffect(() => {
       const timer = setTimeout(() => {
         setIsSplashVisible(false);
-      }, 3000); 
+      }, 1000); 
   
       return () => clearTimeout(timer);
     }, []);

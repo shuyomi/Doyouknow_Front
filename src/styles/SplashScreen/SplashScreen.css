@@ -7,13 +7,18 @@
     background-color: #e9f2ff78;
     animation: fadeIn 1.5s ease-in;
   }
-  .splash-logo {
-    width: 150px;   
+
+
+  
+
+  .splash-logo2 {
+    width: 350px;   
     height: auto;
-    margin-bottom: 15px;
     animation: popUp 1s ease-in-out;
   }
   
+ 
+
   .logo {
     font-size: 20px;
     font-weight: bold;
