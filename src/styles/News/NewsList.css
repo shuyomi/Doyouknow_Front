@@ -1,14 +1,25 @@
 .news-box {
-    width: 100%;
+
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
 }
 
 .news-list {
-    width: 85%;
-    margin: 10px auto;
+    width: 20rem;
+    height: 32rem;
+    margin-top: 10px;
+
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
-
+     overflow-y: auto;
+  scrollbar-width: none;       
+  -ms-overflow-style: none;  
+  
 
 }
 
