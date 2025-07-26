@@ -1,8 +1,10 @@
 import NoticeItem from './NoticeItem';
+import "../../styles/Notice/NoticeList.css";
+
 
 const NoticeList = ({ notices }) => {
   return (
-    <div>
+    <div className='noticelist'>
       {notices.map((notice) => (
         <NoticeItem key={notice.id} notice={notice} />
       ))}

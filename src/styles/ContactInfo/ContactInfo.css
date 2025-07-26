@@ -1,0 +1,13 @@
+.contact-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+}
+
+.contact-body {
+  margin-top: 90px; /* 헤더 높이만큼 아래로 밀기 */
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}
