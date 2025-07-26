@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SplashScreen from './pages/SplashScreen';
+import SplashScreen from "./pages/SplashScreen";
 import Home from "./pages/Home";
 import Lost from "./pages/Lost";
 import Notice from "./pages/Notice";
@@ -20,15 +20,15 @@ function App() {
     const [isSplashVisible, setIsSplashVisible] = useState(true);
 
     useEffect(() => {
-      const timer = setTimeout(() => {
-        setIsSplashVisible(false);
-      }, 3000); 
-  
-      return () => clearTimeout(timer);
+        const timer = setTimeout(() => {
+            setIsSplashVisible(false);
+        }, 3000);
+
+        return () => clearTimeout(timer);
     }, []);
-  
+
     if (isSplashVisible) {
-        return <SplashScreen onFinish={() => setIsSplashVisible(false)} />; 
+        return <SplashScreen onFinish={() => setIsSplashVisible(false)} />;
     }
 
     return (
