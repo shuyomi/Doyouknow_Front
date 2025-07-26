@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/CampusInfo/CampusInfo.css";
 import Header from "../components/CampusInfo/CampusInfoHeader"; 
 import Contents from "../components/CampusInfo/CampusInfoContents"; 
 import Footer from "../components/CampusInfo/Footer"; 

@@ -1,0 +1,11 @@
+.noticelist{
+
+   width: 90%;
+    height: 24rem;
+   
+    margin: 0 auto;
+    overflow-y: auto;
+  scrollbar-width: none;       
+  -ms-overflow-style: none;   
+  margin-bottom: 1rem;
+}

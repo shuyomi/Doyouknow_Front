@@ -11,6 +11,7 @@ const GTest = () => {
       <div className="map-container">
         <img src="/images/CampusGanghwa.png" alt="캠퍼스 지도" className="campus-map" />
       </div>
+      <div className="active-box">
       <Accordion activeIndex={0}>
         <AccordionTab header="① 이공 인문학관"  style={{ margin: 0,  fontSize: '1rem' }}>
           <ul className="info-content" style={{ margin: 0,  fontSize: '0.8rem' }}>
@@ -46,6 +47,7 @@ const GTest = () => {
           </ul>
         </AccordionTab>
       </Accordion>
+      </div>
     </div>
   );
 };

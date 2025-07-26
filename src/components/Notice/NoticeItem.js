@@ -14,7 +14,7 @@ const NoticeItem = ({ notice }) => {
                 <div className="notice-header">
                     <span className="category-title">
                         <span className="category">[{notice.noticeCategory}]</span>{" "}
-                        {truncateText(notice.noticeTitle, 20)}
+                        {truncateText(notice.noticeTitle, 18)}
                     </span>
                 </div>
                 <div className="notice-footer">

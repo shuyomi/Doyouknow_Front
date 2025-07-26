@@ -7,6 +7,9 @@
     margin: 10px auto;
     display: flex;
     flex-direction: column;
+    margin-bottom: 1rem;
+
+
 }
 
 /* 카드 스타일 */
