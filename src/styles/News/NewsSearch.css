@@ -1,12 +1,12 @@
 .search-bar {
-
-    height: 2.5rem;
+   width:  20rem;
+    height: 3rem;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin: 20px 30px;
     padding: 0 20px;
-    border-radius: 18px;
+    border-radius: 20px;
     border: 1px solid #b8b6b6;
 
 }

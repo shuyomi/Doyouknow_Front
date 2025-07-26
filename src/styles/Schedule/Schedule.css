@@ -1,0 +1,12 @@
+.schedule-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+}
+.schedule-body {
+  margin-top: 60px; /* header 높이만큼 아래로 밀어줌 */
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}

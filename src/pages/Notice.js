@@ -5,6 +5,8 @@ import Searchbar from "../components/Notice/Searchbar";
 import NoticeList from "../components/Notice/NoticeList";
 import axios from "axios";
 import { Paginator } from "primereact/paginator";
+import "../styles/Notice/Notice.css";
+
 
 
 const Notice = () => {
@@ -70,7 +72,7 @@ const Notice = () => {
     
     
     return (
-        <div>
+        <div className="notice-page">
             <NoticeHeader />
             <NoticeCategory
                 categories={categories}

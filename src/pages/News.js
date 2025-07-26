@@ -8,7 +8,7 @@ import axios from "axios";
 const News = () => {
     const [newslist, setNewslist] = useState([]);
     const [page, setPage] = useState(0);
-    const [size] = useState(10);
+    const [size] = useState(6);
     const [totalRecords, setTotalRecords] = useState(0);
     const [searchKeyword, setSearchKeyword] = useState("");
 
