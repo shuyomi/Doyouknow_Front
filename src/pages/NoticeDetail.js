@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState ,  useLayoutEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import NoticeDetailHeader from "../components/Notice/NoticeDetailHeader";
 import "../styles/Notice/NoticeDetail.css";
+
 
 // img 태그의 이미지 상대 경로를 절대 경로로 바꿔주는 함수
 const addBaseUrlToImageSrc = (htmlString) => {
@@ -27,7 +28,29 @@ const addBaseUrlToImageSrc = (htmlString) => {
 };
 
 const NoticeDetail = () => {
+
+    {/*useLayoutEffect(() => {
+        const originalViewport = document.querySelector("meta[name=viewport]");
+
+            // 기존 content 저장
+            const originalContent = originalViewport?.getAttribute("content");
+
+            // 화면 고정 해제 (확대 가능)
+            originalViewport?.setAttribute(
+            "content",
+            "width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+            );
+
+            // 페이지 나가면 다시 원래대로 복원
+            return () => {
+            if (originalViewport && originalContent) {
+                originalViewport.setAttribute("content", originalContent);
+            }
+            };
+        }, []);*/}
+
     const { id } = useParams();
+
     const [noticeData, setNoticeData] = useState(null);
 
     useEffect(() => {
@@ -47,16 +70,18 @@ const NoticeDetail = () => {
     const updatedBody = addBaseUrlToImageSrc(noticeData.noticeBody);
 
     return (
+
         <div>
             <NoticeDetailHeader />
             <div className="noticeDetail-container">
+                <div className="noticeDetail-fixed">
                 <div className="noticeDetail-title">{noticeData.noticeTitle}</div>
                 <hr className="title-footer" />
                 <div className="notice-footer">
                     <span className="date">{noticeData.noticeDate}</span>
                     <span className="divider">|</span>
                     <span className="author">{noticeData.noticeWriter}</span>
-                </div>
+                </div></div>
                 <hr className="body-top" />
                 <div
                     className="noticeDetail-body"
@@ -64,6 +89,7 @@ const NoticeDetail = () => {
                 />
             </div>
         </div>
+     
     );
 };
 
