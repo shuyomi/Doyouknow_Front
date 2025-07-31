@@ -1,4 +1,4 @@
-.noticelist{
+/* .noticelist{
 
    width: 90%;
     height: 30rem;
@@ -8,4 +8,10 @@
   scrollbar-width: none;       
   -ms-overflow-style: none;   
   margin-bottom: 1rem;
+} */
+
+.noticelist {
+    width: 20rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
 }
