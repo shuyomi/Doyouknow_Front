@@ -3,22 +3,20 @@
 }
 
 .faqlist-container {
-    height: 31rem;
+    /* height 제거 또는 auto로 설정 */
     margin-top: 1rem;
     margin-left: 25px;
     margin-right: 25px;
     margin-bottom: 1rem;
     cursor: pointer;
-    z-index: 9999; 
-     overflow-y: auto;
-  scrollbar-width: none;       
-  -ms-overflow-style: none;   
+    z-index: 9999;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .faqlist-container::-webkit-scrollbar {
-  display: none;               /* Chrome, Safari, Edge */
+    display: none; /* Chrome, Safari, Edge */
 }
-
 
 .faq-question,
 .faq-answer {
