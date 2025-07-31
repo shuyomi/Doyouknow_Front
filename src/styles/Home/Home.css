@@ -1,4 +1,4 @@
-.back{
+/* .back{
  width: 100%;
   top: 0;
   left: 50%;
@@ -8,4 +8,11 @@
    position: fixed;   
     overflow: hidden;
   background-color: #eaf2fe;
+} */
+.back {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #eaf2fe;
+    overflow: hidden;
 }
