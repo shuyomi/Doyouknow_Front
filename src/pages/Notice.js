@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import NoticeHeader from "../components/Notice/NoticeHeader";
 import NoticeCategory from "../components/Notice/NoticeCategory";
 import Searchbar from "../components/Notice/Searchbar";
@@ -73,7 +73,7 @@ const Notice = () => {
     
     return (
         <div className="notice-page">
-            <NoticeHeader />
+            <NoticeHeader className="sticky-header" />
             <NoticeCategory
                 categories={categories}
                 onSelectCategory={handleSelectCategory}

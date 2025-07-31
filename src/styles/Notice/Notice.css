@@ -1,6 +1,14 @@
 .notice-page{
      width: 100%;
-  height: 43rem;  
+  height: 100vh;  
   position: fixed;     
-  overflow: hidden; 
+ 
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* 다른 요소 위로 오게 */
+  background-color: white; /* 배경색 없으면 아래가 비쳐보일 수 있음 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 선택 사항: 아래 그림자 */
 }

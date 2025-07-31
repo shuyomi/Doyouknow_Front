@@ -15,6 +15,7 @@ const Searchbar = ({ onSearch }) => {
     };
 
     return (
+        <div className="search-box">
         <div className="search-bar"> 
             <input
                 type="text"
@@ -27,6 +28,7 @@ const Searchbar = ({ onSearch }) => {
                 검색
             </button>
 
+        </div>
         </div>
     );
 };

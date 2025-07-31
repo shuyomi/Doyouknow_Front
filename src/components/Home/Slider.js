@@ -40,7 +40,7 @@ const Slider = () => {
         <div className="slide">
             {images[currentIndex] === "/images/slide3.png" ? (
                 <a
-                    href="https://www.anyang.ac.kr/main/communication/notice.do?mode=view&articleNo=33074&article.offset=0&articleLimit=15&srSearchVal=%EC%A2%85%ED%95%A9%EA%B0%95%EC%9D%98%EC%8B%9C%EA%B0%84%ED%91%9C"
+                    href="https://www.anyang.ac.kr/cms/etcResourceOpen.do?site=$cms$LYQwlgdkA&key=$cms$EwVgtMAEihE4lquKg1gNccDtDgQGsDorAKA7AOmAJwCUuADgCYBmQA"
                     target="_blank"
                     rel="noopener noreferrer"
                 >

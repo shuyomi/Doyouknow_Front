@@ -13,6 +13,7 @@ const NewsSearch = ({ onSearch }) => {
     };
 
     return (
+        <div className="search-box">
         <div className="search-bar"> 
             <input
                 type="text"
@@ -25,6 +26,7 @@ const NewsSearch = ({ onSearch }) => {
                 검색
             </button>
 
+        </div>
         </div>
     );
 };
