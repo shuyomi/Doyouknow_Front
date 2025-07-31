@@ -1,14 +1,11 @@
 .news-box {
-
-   display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
-
 }
 
-.news-list {
+/* .news-list {
     width: 20rem;
     height: 32rem;
     margin-top: 10px;
@@ -21,6 +18,14 @@
   -ms-overflow-style: none;  
   
 
+} */
+
+.news-list {
+    width: 20rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* 카드 스타일 */
