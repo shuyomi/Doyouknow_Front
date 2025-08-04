@@ -10,12 +10,13 @@ const ScheduleCalendar = () => {
         const startDate = `${info.event.start.getMonth() + 1}/${info.event.start.getDate()}`;
         let endDate = startDate;
 
-        // 이벤트가 1일일 때
         if (info.event.end) {
-            endDate = `${info.event.end.getMonth() + 1}/${info.event.end.getDate()}`;
+            const adjustedEnd = new Date(info.event.end);
+            adjustedEnd.setDate(adjustedEnd.getDate() - 1); // 하루 감소
+            endDate = `${adjustedEnd.getMonth() + 1}/${adjustedEnd.getDate()}`;
         }
 
-        alert(info.event.title + "(" + startDate + " ~ " + endDate + ")");
+        alert(`${info.event.title} (${startDate} ~ ${endDate})`);
     };
 
     const handleDayCellContent = (arg) => {
