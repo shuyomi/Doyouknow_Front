@@ -50,9 +50,9 @@ const Notice = () => {
         }
     };
 
-    useEffect(() => {
-        fetchNotices();
-    }, [selectedCategory, page, searchKeyword]);
+  useEffect(() => {
+  fetchNotices();
+}, [fetchNotices, selectedCategory, page, searchKeyword]);
 
     const handleSelectCategory = (category) => {
         setSelectedCategory(category);
