@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import '../../styles/CampusInfo/CampusInfoContents.css';
 import { TabView, TabPanel } from 'primereact/tabview';
 import AnyangPage from './Anyang/AnyangPage';
