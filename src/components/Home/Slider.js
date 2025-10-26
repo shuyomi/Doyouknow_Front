@@ -79,7 +79,7 @@ import React, { useState, useEffect } from "react";
 import "../../styles/Home/Slider.css";
 
 const Slider = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [setCurrentIndex] = useState(0);
 
     // 보여줄 이미지 하나만 남김
     const images = ["/images/slide3.png"];
