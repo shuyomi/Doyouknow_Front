@@ -18,37 +18,38 @@ const Notice = () => {
     const [searchKeyword, setSearchKeyword] = useState(""); // 검색어 상태
    
 
-    const categories = ["전체", "대학교", "학사", "대학원", "취업정보", "입찰/채용"];
-    const fetchNotices = useCallback async () => {
-        try {
-            let res;
+   const fetchNotices = useCallback(async () => {
+  try {
+    let res;
 
-            if (searchKeyword.trim() !== "") {
-                res = await axios.get("https://doyouknow.shop/notice/search", {
-                    params: {
-                        noticeSearchVal: searchKeyword,
-                        page: page,
-                        size: size,
-                    },
-                });
-            } else {
-                if (selectedCategory === "전체") {
-                    res = await axios.get(`https://doyouknow.shop/notice/all?page=${page}&size=${size}`);
-                } else {
-                    res = await axios.get(
-                        `https://doyouknow.shop/notice/category?noticeCategory=${encodeURIComponent(
-                            selectedCategory
-                        )}&page=${page}&size=${size}`
-                    );
-                }
-            }
+    if (searchKeyword.trim() !== "") {
+      res = await axios.get("https://doyouknow.shop/notice/search", {
+        params: {
+          noticeSearchVal: searchKeyword,
+          page: page,
+          size: size,
+        },
+      });
+    } else {
+      if (selectedCategory === "전체") {
+        res = await axios.get(
+          `https://doyouknow.shop/notice/all?page=${page}&size=${size}`
+        );
+      } else {
+        res = await axios.get(
+          `https://doyouknow.shop/notice/category?noticeCategory=${encodeURIComponent(
+            selectedCategory
+          )}&page=${page}&size=${size}`
+        );
+      }
+    }
 
-            setNotices(res.data.content);
-            setTotalRecords(res.data.totalElements);
-        } catch (err) {
-            console.error("API 호출 오류:", err);
-        }
-    };
+    setNotices(res.data.content);
+    setTotalRecords(res.data.totalElements);
+  } catch (err) {
+    console.error("API 호출 오류:", err);
+  }
+}, [searchKeyword, selectedCategory, page, size]);
 
   useEffect(() => {
   fetchNotices();
