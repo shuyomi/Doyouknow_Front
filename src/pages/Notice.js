@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import NoticeHeader from "../components/Notice/NoticeHeader";
 import NoticeCategory from "../components/Notice/NoticeCategory";
 import Searchbar from "../components/Notice/Searchbar";
@@ -17,6 +17,7 @@ const Notice = () => {
     const [totalRecords, setTotalRecords] = useState(0); // 전체 게시글 수
     const [searchKeyword, setSearchKeyword] = useState(""); // 검색어 상태
    
+const categories = ["전체", "대학교", "학사", "대학원", "취업정보", "입찰/채용"];
 
    const fetchNotices = useCallback(async () => {
   try {
