@@ -13,7 +13,7 @@ const Notice = () => {
     const [selectedCategory, setSelectedCategory] = useState("전체");
     const [notices, setNotices] = useState([]);
     const [page, setPage] = useState(0); // 현재 페이지 (0부터 시작)
-    const [size, setSize] = useState(10); // 한 페이지에 보여줄 게시글 수
+    const [size] = useState(10); // 한 페이지에 보여줄 게시글 수
     const [totalRecords, setTotalRecords] = useState(0); // 전체 게시글 수
     const [searchKeyword, setSearchKeyword] = useState(""); // 검색어 상태
    
