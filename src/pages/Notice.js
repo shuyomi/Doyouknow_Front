@@ -54,7 +54,7 @@ const categories = ["전체", "대학교", "학사", "대학원", "취업정보"
 
   useEffect(() => {
   fetchNotices();
-}, [selectedCategory, page, searchKeyword]);
+}, [fetchNotices]);
 
     const handleSelectCategory = (category) => {
         setSelectedCategory(category);
