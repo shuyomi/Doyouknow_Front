@@ -19,7 +19,7 @@ const Notice = () => {
    
 
     const categories = ["전체", "대학교", "학사", "대학원", "취업정보", "입찰/채용"];
-    const fetchNotices = async () => {
+    const fetchNotices = useCallback async () => {
         try {
             let res;
 
@@ -52,7 +52,7 @@ const Notice = () => {
 
   useEffect(() => {
   fetchNotices();
-}, [fetchNotices, selectedCategory, page, searchKeyword]);
+}, [selectedCategory, page, searchKeyword]);
 
     const handleSelectCategory = (category) => {
         setSelectedCategory(category);
