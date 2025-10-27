@@ -98,7 +98,6 @@ const Slider = () => {
   );
 };
 
-export default Slider;
     return (
         <div className="slide-box">
             <div className="slide">
