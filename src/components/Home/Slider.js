@@ -75,44 +75,30 @@
 
 
 ////////////////////////////////////임시 코드///////////////////////////
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../../styles/Home/Slider.css";
 
 const Slider = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+  const images = ["/images/slide3.png"];
 
-    // 보여줄 이미지 하나만 남김
-    const images = ["/images/slide3.png"];
+  return (
+    <div className="slide-box">
+      <div className="slide">
+        <a
+          href="https://www.anyang.ac.kr/cms/etcResourceOpen.do?site=$cms$LYQwlgdkA&key=$cms$EwVgtMAEihE4lquKg1gNccDtDgQGsDorAKA7AOmAJwCUuADgCYBmQA"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={images[0]} alt="슬라이드 이미지" />
+        </a>
+      </div>
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 5000);
-
-        return () => clearInterval(interval);
-    }, [images.length]);
-
-    return (
-        <div className="slide-box">
-            <div className="slide">
-                <a
-                    href="https://www.anyang.ac.kr/cms/etcResourceOpen.do?site=$cms$LYQwlgdkA&key=$cms$EwVgtMAEihE4lquKg1gNccDtDgQGsDorAKA7AOmAJwCUuADgCYBmQA"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <img
-                        src={images[0]}
-                        alt="슬라이드 이미지"
-                    />
-                </a>
-            </div>
-
-            {/* 인디케이터 하나만 */}
-            <div className="indicator">
-                <span className="dot active"></span>
-            </div>
-        </div>
-    );
+      {/* 인디케이터 하나만 */}
+      <div className="indicator">
+        <span className="dot active"></span>
+      </div>
+    </div>
+  );
 };
 
 export default Slider;

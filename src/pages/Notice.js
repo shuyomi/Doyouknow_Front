@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import NoticeHeader from "../components/Notice/NoticeHeader";
 import NoticeCategory from "../components/Notice/NoticeCategory";
 import Searchbar from "../components/Notice/Searchbar";
@@ -13,46 +13,48 @@ const Notice = () => {
     const [selectedCategory, setSelectedCategory] = useState("전체");
     const [notices, setNotices] = useState([]);
     const [page, setPage] = useState(0); // 현재 페이지 (0부터 시작)
-    const [size, setSize] = useState(10); // 한 페이지에 보여줄 게시글 수
+    const [size] = useState(10); // 한 페이지에 보여줄 게시글 수
     const [totalRecords, setTotalRecords] = useState(0); // 전체 게시글 수
     const [searchKeyword, setSearchKeyword] = useState(""); // 검색어 상태
    
+const categories = ["전체", "대학교", "학사", "대학원", "취업정보", "입찰/채용"];
 
-    const categories = ["전체", "대학교", "학사", "대학원", "취업정보", "입찰/채용"];
-    const fetchNotices = async () => {
-        try {
-            let res;
+   const fetchNotices = useCallback(async () => {
+  try {
+    let res;
 
-            if (searchKeyword.trim() !== "") {
-                res = await axios.get("https://doyouknow.shop/notice/search", {
-                    params: {
-                        noticeSearchVal: searchKeyword,
-                        page: page,
-                        size: size,
-                    },
-                });
-            } else {
-                if (selectedCategory === "전체") {
-                    res = await axios.get(`https://doyouknow.shop/notice/all?page=${page}&size=${size}`);
-                } else {
-                    res = await axios.get(
-                        `https://doyouknow.shop/notice/category?noticeCategory=${encodeURIComponent(
-                            selectedCategory
-                        )}&page=${page}&size=${size}`
-                    );
-                }
-            }
+    if (searchKeyword.trim() !== "") {
+      res = await axios.get("https://doyouknow.shop/notice/search", {
+        params: {
+          noticeSearchVal: searchKeyword,
+          page: page,
+          size: size,
+        },
+      });
+    } else {
+      if (selectedCategory === "전체") {
+        res = await axios.get(
+          `https://doyouknow.shop/notice/all?page=${page}&size=${size}`
+        );
+      } else {
+        res = await axios.get(
+          `https://doyouknow.shop/notice/category?noticeCategory=${encodeURIComponent(
+            selectedCategory
+          )}&page=${page}&size=${size}`
+        );
+      }
+    }
 
-            setNotices(res.data.content);
-            setTotalRecords(res.data.totalElements);
-        } catch (err) {
-            console.error("API 호출 오류:", err);
-        }
-    };
+    setNotices(res.data.content);
+    setTotalRecords(res.data.totalElements);
+  } catch (err) {
+    console.error("API 호출 오류:", err);
+  }
+}, [searchKeyword, selectedCategory, page, size]);
 
-    useEffect(() => {
-        fetchNotices();
-    }, [selectedCategory, page, searchKeyword]);
+  useEffect(() => {
+  fetchNotices();
+}, [fetchNotices]);
 
     const handleSelectCategory = (category) => {
         setSelectedCategory(category);

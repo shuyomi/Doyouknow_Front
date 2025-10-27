@@ -1,4 +1,4 @@
-import { useEffect, useState ,  useLayoutEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import NoticeDetailHeader from "../components/Notice/NoticeDetailHeader";
@@ -29,7 +29,7 @@ const addBaseUrlToImageSrc = (htmlString) => {
 
 const NoticeDetail = () => {
 
-    {/*useLayoutEffect(() => {
+    /*useLayoutEffect(() => {
         const originalViewport = document.querySelector("meta[name=viewport]");
 
             // 기존 content 저장
@@ -47,7 +47,7 @@ const NoticeDetail = () => {
                 originalViewport.setAttribute("content", originalContent);
             }
             };
-        }, []);*/}
+        }, []);*/
 
     const { id } = useParams();
 
