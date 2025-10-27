@@ -79,19 +79,26 @@ import React, { useState, useEffect } from "react";
 import "../../styles/Home/Slider.css";
 
 const Slider = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-    // 보여줄 이미지 하나만 남김
-    const images = ["/images/slide3.png"];
+  const images = ["/images/slide3.png"];
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 5000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
 
-        return () => clearInterval(interval);
-    }, [images.length]);
+    return () => clearInterval(interval);
+  }, [images.length, setCurrentIndex]); // ✅ 경고 사라짐
 
+  return (
+    <div className="slider">
+      <img src={images[currentIndex]} alt="슬라이드 이미지" />
+    </div>
+  );
+};
+
+export default Slider;
     return (
         <div className="slide-box">
             <div className="slide">
