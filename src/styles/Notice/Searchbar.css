@@ -1,24 +1,14 @@
-.search-box{
-
-    height: 3.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1.5rem;
-
-
-
-}
-
 .search-bar {
-    width: 19.5rem;
+    width: 90%;
+    max-width: 500px;
     height: 3rem;
+    margin: 1.5rem auto 0;
+    padding: 0 12px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     border-radius: 18px;
     border: 1px solid #b8b6b6;
-
 }
 
 .search-input {
@@ -28,6 +18,7 @@
     border-radius: 6px;
     font-size: 14px;
     margin-right: 8px;
+    background: transparent;
 }
 
 .search-input:focus {
@@ -37,7 +28,6 @@
 
 .search-button {
     padding: 5px 15px;
-    margin-right: -10px;
     background-color: #007bff;
     color: white;
     border: none;

@@ -1,9 +1,20 @@
+.newsitem-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .news-container {
-    width:  20rem;
     border: 1px solid #b8b6b6;
     border-radius: 20px;
-    padding: 5px 5px 10px 15px;
-    margin-bottom: 15px;
+    padding: 10px 10px 15px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.news-container:hover {
+    background-color: #f5f8fc;
 }
 
 .news-container div {
@@ -13,6 +24,12 @@
 .news-header {
     display: flex;
     align-items: center;
+}
+
+.category-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
 }
 
 .news-footer {

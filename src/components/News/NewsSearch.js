@@ -9,24 +9,21 @@ const NewsSearch = ({ onSearch }) => {
     };
 
     const handleSearchClick = () => {
-        onSearch(input); 
+        onSearch(input);
     };
 
     return (
-        <div className="search-box">
-        <div className="search-bar"> 
+        <div className="search-bar">
             <input
                 type="text"
                 className="search-input"
                 placeholder="검색어를 입력하세요"
                 value={input}
-                onChange={handleInputChange} 
+                onChange={handleInputChange}
             />
             <button className="search-button" onClick={handleSearchClick}>
                 검색
             </button>
-
-        </div>
         </div>
     );
 };

@@ -1,17 +1,6 @@
-/* .noticelist{
-
-   width: 90%;
-    height: 30rem;
-   
-    margin: 0 auto;
-    overflow-y: auto;
-  scrollbar-width: none;       
-  -ms-overflow-style: none;   
-  margin-bottom: 1rem;
-} */
-
 .noticelist {
-    width: 95%;
-    margin: 0 auto;
-    margin-bottom: 1rem;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: 1rem;
 }
