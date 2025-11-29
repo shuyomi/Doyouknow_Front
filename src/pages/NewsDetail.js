@@ -50,18 +50,35 @@ const NewsDetail = () => {
         <div className="news-detail">
             <Header />
             <div className="noticeDetail-container">
-                <div className="noticeDetail-title">{newsData.newsTitle}</div>
-                <hr className="title-footer" />
-                <div className="notice-footer">
-                    <span className="date">{newsData.newsDate}</span>
-                    <span className="divider">|</span>
-                    <span className="author">{newsData.newsWriter}</span>
+                <div className="noticeDetail-fixed">
+                    <div className="noticeDetail-title">{newsData.newsTitle}</div>
+                    <div className="notice-footer">
+                        <span className="date">{newsData.newsDate}</span>
+                        <span className="divider">|</span>
+                        <span className="author">{newsData.newsWriter}</span>
+                    </div>
                 </div>
-                <hr className="body-top" />
                 <div
                     className="noticeDetail-body"
                     dangerouslySetInnerHTML={{ __html: updatedBody || "" }}
                 />
+                <div className="original-link-container">
+                    <a
+                        href={newsData.newsUrl || "#"}
+                        target={newsData.newsUrl ? "_blank" : "_self"}
+                        rel="noopener noreferrer"
+                        className={`original-link-button ${!newsData.newsUrl ? "disabled" : ""}`}
+                        onClick={(e) => {
+                            if (!newsData.newsUrl) {
+                                e.preventDefault();
+                                alert("원본 링크 정보가 없습니다.");
+                            }
+                        }}
+                    >
+                        <span>원본 사이트로 이동하기</span>
+                        <span className="external-icon">→</span>
+                    </a>
+                </div>
             </div>
         </div>
     );

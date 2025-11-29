@@ -28,29 +28,7 @@ const addBaseUrlToImageSrc = (htmlString) => {
 };
 
 const NoticeDetail = () => {
-
-    /*useLayoutEffect(() => {
-        const originalViewport = document.querySelector("meta[name=viewport]");
-
-            // 기존 content 저장
-            const originalContent = originalViewport?.getAttribute("content");
-
-            // 화면 고정 해제 (확대 가능)
-            originalViewport?.setAttribute(
-            "content",
-            "width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
-            );
-
-            // 페이지 나가면 다시 원래대로 복원
-            return () => {
-            if (originalViewport && originalContent) {
-                originalViewport.setAttribute("content", originalContent);
-            }
-            };
-        }, []);*/
-
     const { id } = useParams();
-
     const [noticeData, setNoticeData] = useState(null);
 
     useEffect(() => {
@@ -70,26 +48,40 @@ const NoticeDetail = () => {
     const updatedBody = addBaseUrlToImageSrc(noticeData.noticeBody);
 
     return (
-
         <div>
             <NoticeDetailHeader />
             <div className="noticeDetail-container">
                 <div className="noticeDetail-fixed">
-                <div className="noticeDetail-title">{noticeData.noticeTitle}</div>
-                <hr className="title-footer" />
-                <div className="notice-footer">
-                    <span className="date">{noticeData.noticeDate}</span>
-                    <span className="divider">|</span>
-                    <span className="author">{noticeData.noticeWriter}</span>
-                </div></div>
-                <hr className="body-top" />
+                    <div className="noticeDetail-title">{noticeData.noticeTitle}</div>
+                    <div className="notice-footer">
+                        <span className="date">{noticeData.noticeDate}</span>
+                        <span className="divider">|</span>
+                        <span className="author">{noticeData.noticeWriter}</span>
+                    </div>
+                </div>
                 <div
                     className="noticeDetail-body"
                     dangerouslySetInnerHTML={{ __html: updatedBody || "" }}
                 />
+                <div className="original-link-container">
+                    <a
+                        href={noticeData.noticeUrl || "#"}
+                        target={noticeData.noticeUrl ? "_blank" : "_self"}
+                        rel="noopener noreferrer"
+                        className={`original-link-button ${!noticeData.noticeUrl ? "disabled" : ""}`}
+                        onClick={(e) => {
+                            if (!noticeData.noticeUrl) {
+                                e.preventDefault();
+                                alert("원본 링크 정보가 없습니다.");
+                            }
+                        }}
+                    >
+                        <span>원본 사이트로 이동하기</span>
+                        <span className="external-icon">→</span>
+                    </a>
+                </div>
             </div>
         </div>
-     
     );
 };
 

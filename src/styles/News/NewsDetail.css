@@ -1,81 +1,297 @@
-/* .news-detail {
-    width: 100%;
-    margin: auto;
-    background-color: #ffffff;
-    border: 1px solid rgb(156, 156, 156);
-    display: flex;
-    flex-direction: column;
-}
-
-.detail{
-    height: 90vh;
-    width: 100%;
-}
-
-
-.title {
-    font-size: 16px; 
-    font-weight: bold;
-    text-align: left;
-    padding-bottom: 20px;
-    border-bottom: 2px solid rgb(156, 156, 156);
-    width: 100%;
-}
-
-.news-detail p {
-    font-size: 10px; 
-    line-height: 1.6;
-    margin: 10px 0;
-    color: #333;
-
-}
-
-.news-content {
-    margin-top: 15px;
-    padding-top: 10px;
-    border-top: 1px solid #717171;
-
-} */
-
 .noticeDetail-container {
-    margin-top: 23px;
-    margin-left: 10px;
-    margin-right: 10px;
- 
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 25px 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .noticeDetail-fixed {
-  position: sticky;
-  top: 0;
-  background-color: white;
-  z-index: 1000;
-  padding: 10px 0;
- /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);  선택적 */
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1000;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eaf2fe;
 }
+
 .noticeDetail-title {
-    font-size: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.4;
 }
 
 .notice-footer {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     color: #666;
     font-size: 14px;
+    padding: 12px 16px;
+    background-color: #f5f8fc;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.notice-footer .date,
+.notice-footer .author {
+    color: #555;
 }
 
 .divider {
     font-weight: bold;
+    color: #999;
 }
 
 .title-footer {
-    height: 3px;
-    background-color: #666;
-    border: none;
+    display: none;
 }
 
-.noticeDetail-body{
+.body-top {
+    height: 1px;
+    background-color: #e0e0e0;
+    border: none;
+    margin: 20px 0;
+}
+
+.noticeDetail-body {
     width: 100%;
-    max-width: 900px;
+    max-width: 100%;
     overflow-x: auto;
+    line-height: 1.8;
+    color: #333;
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.noticeDetail-body img {
+    max-width: 100%;
+    height: auto !important;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.noticeDetail-body p {
+    margin: 12px 0;
+}
+
+.noticeDetail-body h1,
+.noticeDetail-body h2,
+.noticeDetail-body h3 {
+    color: #1a73e8;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.noticeDetail-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.noticeDetail-body table td,
+.noticeDetail-body table th {
+    border: 1px solid #e0e0e0;
+    padding: 8px;
+}
+
+.noticeDetail-body table th {
+    background-color: #f5f8fc;
+    font-weight: bold;
+}
+
+/* 원본 사이트 링크 버튼 */
+.original-link-container {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.original-link-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+
+.original-link-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.noticeDetail-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 25px 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.noticeDetail-fixed {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1000;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eaf2fe;
+}
+
+.noticeDetail-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.notice-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 14px;
+    padding: 12px 16px;
+    background-color: #f5f8fc;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.notice-footer .date,
+.notice-footer .author {
+    color: #555;
+}
+
+.divider {
+    font-weight: bold;
+    color: #999;
+}
+
+.title-footer {
+    display: none;
+}
+
+.body-top {
+    height: 1px;
+    background-color: #e0e0e0;
+    border: none;
+    margin: 20px 0;
+}
+
+.noticeDetail-body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    line-height: 1.8;
+    color: #333;
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.noticeDetail-body img {
+    max-width: 100%;
+    height: auto !important;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.noticeDetail-body p {
+    margin: 12px 0;
+}
+
+.noticeDetail-body h1,
+.noticeDetail-body h2,
+.noticeDetail-body h3 {
+    color: #1a73e8;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.noticeDetail-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.noticeDetail-body table td,
+.noticeDetail-body table th {
+    border: 1px solid #e0e0e0;
+    padding: 8px;
+}
+
+.noticeDetail-body table th {
+    background-color: #f5f8fc;
+    font-weight: bold;
+}
+
+/* 원본 사이트 링크 버튼 */
+.original-link-container {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.original-link-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+
+.original-link-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.original-link-button .external-icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.original-link-button:hover .external-icon {
+    transform: translateX(4px);
+}
+
+/* 링크 없을 때 비활성화 스타일 */
+.original-link-button.disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.original-link-button.disabled:hover {
+    background-color: #cccccc;
+    transform: none;
+    box-shadow: none;
+}
+
+.original-link-button.disabled:hover .external-icon {
+    transform: none;
 }
